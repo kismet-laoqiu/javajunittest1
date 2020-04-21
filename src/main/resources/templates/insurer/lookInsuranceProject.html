@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="insurer/layout">
+<head>
+</head>
+<body>
+<div th:fragment="css">
+
+</div>
+<div th:fragment="content">
+    <ul class="breadcrumb">
+        <li><a href="/insurer/home"><i class="fa fa-home mr-1"></i>主页</a></li>
+        <li><a href="/insurer/listInsuranceProject">项目管理</a></li>
+        <li class="active">保险项目查看</li>
+    </ul>
+    <div class="mx-auto mt-3">
+        <h1 class="text-center mb-3">保险项目</h1>
+        <div class="text-center">创建时间:<span
+                th:text="${#dates.format(insuranceProject.createTime, 'yyyy年MM月dd日 HH:mm:ss')}"></span>
+        </div>
+
+        <div>
+            <div class="row content">
+                <div class="col-sm-2">险种名称</div>
+                <div class="col-sm-4" th:text="${insuranceProject.insuranceName}"></div>
+                <div class="col-sm-2">理赔疾病</div>
+                <div class="col-sm-4" th:text="${insuranceProject.claimDisease}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-2">保险期限(年)</div>
+                <div class="col-sm-4" th:text="${insuranceProject.insurancePeriod}"></div>
+                <div class="col-sm-2">销售范围</div>
+                <div class="col-sm-4" th:text="${insuranceProject.salesScope}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-2">年免赔额(%)</div>
+                <div class="col-sm-4" th:text="${insuranceProject.annualDeductible}"></div>
+                <div class="col-sm-2">赔付比例(%)</div>
+                <div class="col-sm-4" th:text="${insuranceProject.compensationRatio}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-2">一般医疗保险金</div>
+                <div class="col-sm-4" th:text="${insuranceProject.generalMedicalInsurance}"></div>
+                <div class="col-sm-2">重大疾病医疗保险金</div>
+                <div class="col-sm-4" th:text="${insuranceProject.criticalIllnessMedicalInsurance}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-2">保障区域</div>
+                <div class="col-sm-4" th:text="${insuranceProject.guaranteeArea}"></div>
+                <div class="col-sm-2">医院范围</div>
+                <div class="col-sm-4" th:text="${insuranceProject.hospitalScope}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-2">交费年限</div>
+                <div class="col-sm-4" th:text="${insuranceProject.paymentYears}"></div>
+                <div class="col-sm-2">年交保费</div>
+                <div class="col-sm-4" th:text="${insuranceProject.annualPremium}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-2">投保年龄</div>
+                <div class="col-sm-4" th:text="${insuranceProject.issueAge}"></div>
+                <div class="col-sm-2">包含就医绿色通道次数</div>
+                <div class="col-sm-4" th:text="${insuranceProject.greenChannelMedicalTreatment}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-2">保险责任</div>
+                <div class="col-sm-4" th:text="${insuranceProject.insuranceLiability}"></div>
+                <div class="col-sm-2">责任免除</div>
+                <div class="col-sm-4" th:text="${insuranceProject.exclusions}"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:fragment="js">
+
+</div>
+</body>
+</html>

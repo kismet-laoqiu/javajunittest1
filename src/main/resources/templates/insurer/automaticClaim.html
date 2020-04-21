@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="insurer/layout">
+<head>
+</head>
+<body>
+<div th:fragment="css">
+
+</div>
+<div th:fragment="content">
+    <ul class="breadcrumb">
+        <li><a href="/insurer/home"><i class="fa fa-home mr-1"></i>主页</a></li>
+        <li><a href="/insurer/listUnhandledClaimRecord">理赔处理</a></li>
+        <li class="active">一键理赔</li>
+    </ul>
+    <div class="w-60 mx-auto mt-3">
+        <h1 class="text-center mb-3">保单详情</h1>
+        <ul class="list-group">
+            <li class="list-group-item"><span class="content-right"
+                                              th:text="${record.name}"></span>客户姓名:
+            </li>
+            <li class="list-group-item"><span class="content-right"
+                                              th:text="${record.gender}"></span>性别:
+            </li>
+            <li class="list-group-item"><span class="content-right"
+                                              th:text="${record.age}"></span>年龄:
+            </li>
+            <li class="list-group-item"><span class="content-right"
+                                              th:text="${result.flag}"></span>判断结果:
+            </li>
+            <li class="list-group-item"><span class="content-right"
+                                              th:text="${result.claimDisease}"></span>理赔疾病:
+            </li>
+            <li class="list-group-item"><span class="content-right"
+                                              th:text="${result.diseaseGrade}"></span>疾病等级:
+            </li>
+            <li class="list-group-item"><span class="content-right"
+                                              th:text="${result.claimAmount}"></span>理赔金额:
+            </li>
+            <li class="list-group-item">依据:<br>
+                <p class="text-indent" th:text="${result.basis}"></p>
+            </li>
+            <form role="form" class="form-horizontal d-none" id="addForm">
+                <input type="text" class="form-control" id="claimDisease" name="claimDisease"
+                       th:value="${result.claimDisease}">
+                <input type="text" class="form-control" id="diseaseGrade" name="diseaseGrade"
+                       th:value="${result.diseaseGrade}">  
+                <input type="text" class="form-control" id="claimAmount" name="claimAmount"
+                       th:value="${result.claimAmount}">  
+                <textarea class="form-control" rows="5" id="basis" name="basis"
+                          th:text="${result.basis}"></textarea>
+            </form>
+        </ul>
+        <div class="row">
+            <div class="col-sm-6 text-center">
+                <button type="button" class="btn w-90 btn-gray" id="agree">确认理赔
+                </button>
+            </div>
+            <div class="col-sm-6 text-center">
+                <button type="button" class="btn w-90 btn-gray" id="refuse">拒绝理赔
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:fragment="js">
+    <script src="/js/handleClaim.js"></script>
+</div>
+</body>
+</html>

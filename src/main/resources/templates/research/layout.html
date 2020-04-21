@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta patientName="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>医享</title>
+    <link rel="shortcut icon" th:href="@{/favicon.ico}"/>
+    <link rel="bookmark" th:href="@{/favicon.ico}"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <div th:include="::css"></div>
+</head>
+<body>
+<div class="page-wrapper toggled">
+    <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+            <a href="#" id="toggle-sidebar"><i class="fa fa-bars"></i></a>
+            <div class="sidebar-brand">
+                <a href="/">医享</a>
+            </div>
+            <div class="sidebar-header">
+                <div class="user-pic">
+                    <img class="img-responsive img-rounded" th:src="${session.userAvatarUrl}" alt="">
+                </div>
+                <div class="user-info">
+                    <span class="user-name" th:text="${session.userName}"></span>
+                    <span class="user-role">研究机构</span>
+                    <div class="user-status">
+                        <a href="#"><span class="label label-success">已认证</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="fa fa-bar-chart-o"></i><span>医圆管理</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="/research/recharge">医圆充值</a></li>
+                                <li><a href="/research/listOrders">订单记录</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="fa fa-diamond"></i><span>数据管理</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="/research/listBuyData">数据购买</a></li>
+                                <li><a href="/research/listPurchasedData">研究数据</a></li>
+                                <li><a href="/research/updateModel">联邦学习</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar-footer">
+            <a href="/research/home"><i class="fa fa-home"></i></a>
+            <a href="/research/userInfo"><i class="fa fa-user"></i></a>
+            <a href="/signOut"><i class="fa fa-sign-out"></i></a>
+        </div>
+    </nav>
+    <main class="page-content">
+        <div class="container-fluid">
+            <div class="container" th:include="::content"></div>
+        </div>
+    </main>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/js/home.js"></script>
+<div th:include="::js"></div>
+</body>
+</html>

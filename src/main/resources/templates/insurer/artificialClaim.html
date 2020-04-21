@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="insurer/layout">
+<head>
+</head>
+<body>
+<div th:fragment="css">
+
+</div>
+<div th:fragment="content">
+    <ul class="breadcrumb">
+        <li><a href="/insurer/home"><i class="fa fa-home mr-1"></i>主页</a></li>
+        <li><a href="/insurer/listUnhandledClaimRecord">理赔处理</a></li>
+        <li class="active">人工理赔</li>
+    </ul>
+    <div class="mx-auto mt-3">
+        <h3 class="text-center mb-3">客户理赔依据</h3>
+        <div>
+            <div class="row content">
+                <div class="col-sm-1">客户姓名</div>
+                <div class="col-sm-3" th:text="${record.name}"></div>
+                <div class="col-sm-1">性别</div>
+                <div class="col-sm-3" th:text="${record.gender}"></div>
+                <div class="col-sm-1">年龄</div>
+                <div class="col-sm-3" th:text="${record.age}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-1">民族</div>
+                <div class="col-sm-3" th:text="${record.nation}"></div>
+                <div class="col-sm-1">血型</div>
+                <div class="col-sm-3" th:text="${record.bloodType}"></div>
+                <div class="col-sm-1">治疗费用</div>
+                <div class="col-sm-3" th:text="${record.cost}"></div>
+            </div>
+
+            <div class="row content d-flex">
+                <div class="col-sm-1">主诉</div>
+                <div class="col-sm-5" th:text="${record.chiefComplaint}"></div>
+                <div class="col-sm-1">现病史</div>
+                <div class="col-sm-5" th:text="${record.presentIllnessHistory}"></div>
+            </div>
+
+            <div class="row content d-flex">
+                <div class="col-sm-1">既往病史</div>
+                <div class="col-sm-5" th:text="${record.pastIllnessHistory}"></div>
+                <div class="col-sm-1">药物过敏史</div>
+                <div class="col-sm-5" th:text="${record.drugAllergyHistory}"></div>
+            </div>
+
+            <div class="row content d-flex">
+                <div class="col-sm-1">个人史</div>
+                <div class="col-sm-5" th:text="${record.personalHistory}"></div>
+                <div class="col-sm-1">家族史</div>
+                <div class="col-sm-5" th:text="${record.familyHistory}"></div>
+            </div>
+
+            <div class="row content d-flex">
+                <div class="col-sm-1">体格检查</div>
+                <div class="col-sm-5" th:text="${record.physicalExamination}"></div>
+                <div class="col-sm-1">疾病类型</div>
+                <div class="col-sm-5" th:text="${record.diseaseType}"></div>
+            </div>
+
+            <div class="row content d-flex">
+                <div class="col-sm-1">门诊体检</div>
+                <div class="col-sm-5" th:text="${record.outpatientPhysicalExamination}"></div>
+                <div class="col-sm-1">辅助检查</div>
+                <div class="col-sm-5" th:text="${record.supplementaryExamination}"></div>
+            </div>
+
+            <div class="row content d-flex">
+                <div class="col-sm-1">门诊诊断</div>
+                <div class="col-sm-5" th:text="${record.outpatientDiagnosis}"></div>
+                <div class="col-sm-1">治疗意见</div>
+                <div class="col-sm-5" th:text="${record.treatmentAdvice}"></div>
+            </div>
+
+            <div class="row content d-flex">
+                <div class="col-sm-1">门诊处理</div>
+                <div class="col-sm-5" th:text="${record.outpatientHandle}"></div>
+                <div class="col-sm-1">门诊医嘱</div>
+                <div class="col-sm-5" th:text="${record.outpatientDoctorAdvice}"></div>
+            </div>
+
+        </div>
+        <h3 class="text-center mb-3">保单详情</h3>
+        <div>
+            <div class="row content">
+                <div class="col-sm-2">险种名称</div>
+                <div class="col-sm-4" th:text="${insurancePolicy.insuranceProject.insuranceName}"></div>
+                <div class="col-sm-2">理赔疾病</div>
+                <div class="col-sm-4" th:text="${insurancePolicy.insuranceProject.claimDisease}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-2">保险期限(年)</div>
+                <div class="col-sm-4" th:text="${insurancePolicy.insuranceProject.insurancePeriod}"></div>
+                <div class="col-sm-2">销售范围</div>
+                <div class="col-sm-4" th:text="${insurancePolicy.insuranceProject.salesScope}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-2">年免赔额(%)</div>
+                <div class="col-sm-4" th:text="${insurancePolicy.insuranceProject.annualDeductible}"></div>
+                <div class="col-sm-2">赔付比例(%)</div>
+                <div class="col-sm-4" th:text="${insurancePolicy.insuranceProject.compensationRatio}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-2">一般医疗保险金</div>
+                <div class="col-sm-4" th:text="${insurancePolicy.insuranceProject.generalMedicalInsurance}"></div>
+                <div class="col-sm-2">重大疾病医疗保险金</div>
+                <div class="col-sm-4"
+                     th:text="${insurancePolicy.insuranceProject.criticalIllnessMedicalInsurance}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-2">保障区域</div>
+                <div class="col-sm-4" th:text="${insurancePolicy.insuranceProject.guaranteeArea}"></div>
+                <div class="col-sm-2">医院范围</div>
+                <div class="col-sm-4" th:text="${insurancePolicy.insuranceProject.hospitalScope}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-2">交费年限</div>
+                <div class="col-sm-4" th:text="${insurancePolicy.insuranceProject.paymentYears}"></div>
+                <div class="col-sm-2">年交保费</div>
+                <div class="col-sm-4" th:text="${insurancePolicy.insuranceProject.annualPremium}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-2">投保年龄</div>
+                <div class="col-sm-4" th:text="${insurancePolicy.insuranceProject.issueAge}"></div>
+                <div class="col-sm-2">包含就医绿色通道次数</div>
+                <div class="col-sm-4" th:text="${insurancePolicy.insuranceProject.greenChannelMedicalTreatment}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-2">保险责任</div>
+                <div class="col-sm-4" th:text="${insurancePolicy.insuranceProject.insuranceLiability}"></div>
+                <div class="col-sm-2">责任免除</div>
+                <div class="col-sm-4" th:text="${insurancePolicy.insuranceProject.exclusions}"></div>
+            </div>
+        </div>
+        <h3 class="text-center mb-3">处理理赔申请</h3>
+        <div class="w-60 mx-auto mt-3">
+            <form role="form" class="form-horizontal" id="addForm">
+                <div class="form-group">
+                    <label for="claimDisease" class="col-sm-3 control-label">理赔疾病</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="claimDisease" name="claimDisease"
+                               th:value="${insurancePolicy.claimDisease}"
+                               placeholder="请输入理赔疾病">  
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="diseaseGrade" class="col-sm-3 control-label">疾病等级</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="diseaseGrade" name="diseaseGrade"
+                               th:value="${insurancePolicy.diseaseGrade}" placeholder="请输入疾病等级">  
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="claimAmount" class="col-sm-3 control-label">理赔金额</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="claimAmount" name="claimAmount"
+                               th:value="${insurancePolicy.claimAmount}" placeholder="请输入理赔金额">  
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="basis" class="col-sm-3 control-label mb-3">依据</label>
+                    <div class="col-sm-9">
+                        <textarea class="form-control mb-3" rows="5" id="basis" name="basis"
+                                  th:text="${insurancePolicy.basis}" placeholder="请输入依据"></textarea>
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <button type="button" class="btn w-90 btn-gray" id="agree">确认理赔
+                    </button>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <button type="button" class="btn w-90 btn-gray" id="refuse">拒绝理赔
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:fragment="js">
+    <script src="/js/handleClaim.js"></script>
+</div>
+</body>
+</html>

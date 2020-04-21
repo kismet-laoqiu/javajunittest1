@@ -1,0 +1,30 @@
+ INFO [2019-08-15 18:53:50,009] (Test.java:31) - pragma solidity ^0.4.10;
+contract {0} {
+  function add (int num) returns (int) {
+    return num+{1};
+  }
+ }
+
+ INFO [2019-08-15 18:54:22,680] (Test.java:31) - pragma solidity ^0.4.10;
+contract {0} {
+  function add (int num) returns (int) {
+    return num+{1};
+  }
+ }
+
+ INFO [2019-08-15 19:05:13,913] (Test.java:34) - pragma solidity ^0.4.10;
+contract contractName {
+  function add (int num) returns (int) {
+    return num + contractNum;
+  }
+ }
+
+ INFO [2019-08-15 19:05:13,919] (Test.java:39) - pragma solidity ^0.4.10;
+contract InsuranceClaim1 {
+  function add (int num) returns (int) {
+    return num + 12;
+  }
+ }
+
+ INFO [2019-10-08 16:15:48,745] (SDKClient.java:153) - [request] {"app_key":"5KxZAXlxyBygtvmITqmj","filocean_test":true,"app_secret":"dB7IS7WqW9zdds9SVRANpHD6HAezcH","uuid":"571cc20f-e114-11e9-8012-000000000000"}
+ INFO [2019-10-08 16:17:47,899] (SDKClient.java:153) - [request] {"app_key":"5KxZAXlxyBygtvmITqmj","filocean_test":true,"app_secret":"dB7IS7WqW9zdds9SVRANpHD6HAezcH","uuid":"571cc20f-e114-11e9-8012-000000000000"}

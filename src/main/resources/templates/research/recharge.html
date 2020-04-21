@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="research/layout">
+<head>
+</head>
+<body>
+<div th:fragment="css">
+
+</div>
+<div th:fragment="content">
+    <ul class="breadcrumb">
+        <li><a href="/research/home"><i class="fa fa-home mr-1"></i>主页</a></li>
+        <li class="active">充值医圆</li>
+    </ul>
+    <h1 class="text-center mb-3">充值医圆</h1>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <td>机构名</td>
+                    <td id="name" th:text="${name}"></td>
+                </tr>
+                <tr>
+                    <td>组织机构号</td>
+                    <td th:text="${organization}"></td>
+                </tr>
+                <tr>
+                    <td>充值金额<br/>(1元兑换10医圆)</td>
+                    <td>
+                        <div class="form-inline">
+                            <input id="inputMoney" type="text" class="form-control input-group"/>&nbsp;&nbsp;元
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <a href="/research/home">
+                        <button type="button" class="btn w-90 btn-gray" id="agree">返回
+                        </button>
+                    </a>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <button type="button" class="btn w-90 btn-gray" id="rechargeSubmit">提交
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:fragment="js">
+    <script src="/js/recharge.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="insurer/layout">
+<head>
+</head>
+<body>
+<div th:fragment="css">
+
+</div>
+<div th:fragment="content">
+    <ul class="breadcrumb">
+        <li><a href="/insurer/home"><i class="fa fa-home mr-1"></i>主页</a></li>
+        <li class="active">保险项目查看</li>
+    </ul>
+    <div class="w-100 mx-auto">
+        <table class="table table-striped table-bordered w-100 mb-0">
+            <thead>
+            <tr>
+                <td>序号</td>
+                <th>险种</th>
+                <th>一般医疗保险金</th>
+                <th>交费年限</th>
+                <th>年交保费</th>
+                <th colspan="2">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="insuranceProject,state : ${insuranceProjects}">
+                <td th:text="${state.count}"></td>
+                <th th:text="${insuranceProject.insuranceName}"></th>
+                <th th:text="${insuranceProject.generalMedicalInsurance}"></th>
+                <th th:text="${insuranceProject.paymentYears}"></th>
+                <th th:text="${insuranceProject.annualPremium}"></th>
+                <th><a th:href="@{/insurer/lookInsuranceProject(insuranceProjectId=${insuranceProject.id})}">查看</a></th>
+                <th><a th:onclick="deleteInsuranceProject([[${insuranceProject.id}]], this);return false">删除</a></th>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div th:fragment="js">
+    <script src="/js/listInsuranceProject.js"></script>
+</div>
+</body>
+</html>

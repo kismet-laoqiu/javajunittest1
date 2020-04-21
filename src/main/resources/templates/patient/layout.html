@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta patientName="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>医享</title>
+    <link rel="shortcut icon" th:href="@{/favicon.ico}"/>
+    <link rel="bookmark" th:href="@{/favicon.ico}"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <div th:include="::css"></div>
+</head>
+<body>
+<div class="page-wrapper toggled">
+    <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+            <a href="#" id="toggle-sidebar"><i class="fa fa-bars"></i></a>
+            <div class="sidebar-brand">
+                <a href="/">医享</a>
+            </div>
+            <div class="sidebar-header">
+                <div class="user-pic">
+                    <img class="img-responsive img-rounded" th:src="${session.userAvatarUrl}" alt="">
+                </div>
+                <div class="user-info">
+                    <span class="user-name" th:text="${session.userName}"></span>
+                    <span class="user-role">患者</span>
+                    <div class="user-status">
+                        <a href="#"><span class="label label-success">已认证</span></a>
+                    </div>
+                </div>
+            </div>
+            <!- 左侧导航栏-->
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="fa fa-diamond"></i><span>病历管理</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="/patient/listUnConfirmRecord">病历确认</a></li>
+                                <li><a href="/patient/listPatientRecord">病历记录</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="fa fa-tv"></i><span>权限管理</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="/patient/listUnApplyRecord">病历授权</a></li>
+                                <li><a href="/patient/listApplyRecord">授权记录</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="fa fa-cc-discover"></i><span>缴费管理</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="/patient/payment">缴纳费用</a></li>
+                                <li><a href="/patient/listStagingRecord">分期记录</a></li>
+                                <li><a href="/patient/listPayRecord">支付记录</a></li>
+                                <li><a href="/patient/mortgage">抵押贷款</a></li>
+                                <li><a href="/patient/listMortgageRecord">贷款记录</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="fa fa-medkit"></i><span>保险管理</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="/patient/listInsuranceProject">保险项目</a></li>
+                                <li><a href="/patient/listInsurancePolicy">投保记录</a></li>
+                                <li><a href="/patient/listClaimRecord">理赔记录</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar-footer">
+            <a href="/patient/home"><i class="fa fa-home"></i></a>
+            <a href="/patient/userInfo"><i class="fa fa-user"></i></a>
+            <a href="/signOut"><i class="fa fa-sign-out"></i></a>
+        </div>
+    </nav>
+    <main class="page-content">
+        <div class="container-fluid">
+            <div class="container" th:include="::content"></div>
+        </div>
+    </main>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/js/home.js"></script>
+<div th:include="::js"></div>
+</body>
+</html>
