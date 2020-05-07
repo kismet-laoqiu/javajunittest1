@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="insurer/layout">
+<head>
+</head>
+<body>
+<div th:fragment="css">
+
+</div>
+<div th:fragment="content">
+    <ul class="breadcrumb">
+        <li><a href="/insurer/home"><i class="fa fa-home mr-1"></i>主页</a></li>
+        <li class="active">基本信息</li>
+    </ul>
+    <div class="mx-auto mt-3 w-60">
+        <form role="form" class="form" id="addForm">
+            <input type="hidden" id="id" name="id" th:value="${user.id}">
+            <div class="form-group">
+                <div class="col-sm-3">
+                    <img class="img-responsive img-rounded" style="width: 5rem; height: 5rem;" id="avatarUrl"
+                         th:src="${user.avatarUrl}"
+                         alt=""></div>
+                <div class="col-sm-9" style="height: 5rem; line-height:5rem; margin-bottom:1rem;">
+                    <div class="file-container" style="display:inline-block;position:relative;overflow: hidden;vertical-align:middle">
+                        <button class="btn btn-success fileinput-button" type="button">上传图片</button>
+                        <input type="file" id="picture" name="picture" accept="image/*" onchange="changeAvatarUrl(this)" style="position:absolute;top:0;left:0;font-size:34px; opacity:0">
+                    </div>
+                    <span id="fileName" style="vertical-align: middle">未上传文件</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-sm-3 control-label">机构名称</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="name" name="name"
+                           th:value="${user.name}" placeholder="请输入机构名称">  
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="organization" class="col-sm-3 control-label">组织机构代码</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="organization" name="insurerInfo.organization"
+                           th:value="${user.insurerInfo.organization}" placeholder="请输入组织机构代码">  
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="createTime" class="col-sm-3 control-label">成立时间</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="createTime" name="insurerInfo.createTime"
+                           th:value="${user.insurerInfo.createTime}" placeholder="请输入成立时间">  
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="registrar" class="col-sm-3 control-label">登记机关</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="registrar" name="insurerInfo.registrar"
+                           th:value="${user.insurerInfo.registrar}" placeholder="请输入登记机关">  
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="business" class="col-sm-3 control-label">业务范围</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="business" name="insurerInfo.business"
+                           th:value="${user.insurerInfo.business}" placeholder="请输入业务范围">  
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address" class="col-sm-3 control-label">地址</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="address" name="address"
+                           th:value="${user.address}" placeholder="请输入地址">  
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="details" class="col-sm-3 control-label mb-3">机构详细介绍</label>
+                <div class="col-sm-9">
+                            <textarea class="form-control mb-3" rows="5" id="details" name="insurerInfo.details"
+                                      th:text="${user.insurerInfo.details}" placeholder="请输入机构详细介绍"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <button type="button" class="btn w-90 btn-gray" id="back"
+                            onclick="javascript:window.location.href='/insurer/home';">返回
+                    </button>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <button type="button" class="btn w-90 btn-gray" id="insurerInfoSubmit">保存
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div th:fragment="js">
+    <script src="/js/changeInsurerInfo.js"></script>
+</div>
+</body>
+</html>

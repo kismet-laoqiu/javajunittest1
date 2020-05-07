@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="insurer/layout">
+<head>
+</head>
+<body>
+<div th:fragment="css">
+
+</div>
+<div th:fragment="content">
+    <ul class="breadcrumb">
+        <li><a href="/insurer/home"><i class="fa fa-home mr-1"></i>主页</a></li>
+        <li class="active">发布项目</li>
+    </ul>
+    <div class="mx-auto mt-3">
+        <h1 class="text-center mb-3">发布保险项目</h1>
+        <form role="form" class="form-horizontal pt-3" id="addForm">
+
+            <div class="form-group">
+                <label for="insuranceName" class="col-sm-2 control-label">险种名称</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="insuranceName" name="insuranceName"
+                           placeholder="请输入险种名称">  
+                </div>
+                <label for="claimDisease" class="col-sm-2 control-label">理赔疾病</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="claimDisease" name="claimDisease"
+                           placeholder="请输入理赔疾病">  
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="insurancePeriod" class="col-sm-2 control-label">保险期限(年)</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="insurancePeriod" name="insurancePeriod"
+                           placeholder="请输入保险期限">  
+                </div>
+                <label for="salesScope" class="col-sm-2 control-label">销售范围</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="salesScope" name="salesScope"
+                           placeholder="请输入销售范围">  
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="annualDeductible" class="col-sm-2 control-label">年免赔额(%)</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="annualDeductible" name="annualDeductible"
+                           placeholder="请输入年免赔额">  
+                </div>
+                <label for="compensationRatio" class="col-sm-2 control-label">赔付比例(%)</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="compensationRatio" name="compensationRatio"
+                           placeholder="请输入赔付比例">  
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="generalMedicalInsurance" class="col-sm-2 control-label">一般医疗保险金</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="generalMedicalInsurance" name="generalMedicalInsurance"
+                           placeholder="请输入一般医疗保险金">  
+                </div>
+                <label for="criticalIllnessMedicalInsurance" class="col-sm-2 control-label">重大疾病医疗保险金</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="criticalIllnessMedicalInsurance"
+                           name="criticalIllnessMedicalInsurance" placeholder="请输入重大疾病医疗保险金">  
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="guaranteeArea" class="col-sm-2 control-label">保障区域</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="guaranteeArea" name="guaranteeArea"
+                           placeholder="请输入保障区域">  
+                </div>
+                <label for="hospitalScope" class="col-sm-2 control-label">医院范围</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="hospitalScope" name="hospitalScope"
+                           placeholder="请输入医院范围">  
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="paymentYears" class="col-sm-2 control-label">交费年限</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="paymentYears" name="paymentYears" placeholder="请输入交费年限">
+                     
+                </div>
+                <label for="annualPremium" class="col-sm-2 control-label">年交保费</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="annualPremium" name="annualPremium"
+                           placeholder="请输入年交保费">  
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="issueAge" class="col-sm-2 control-label">投保年龄</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="issueAge" name="issueAge" placeholder="请输入投保年龄">  
+                </div>
+                <label for="greenChannelMedicalTreatment" class="col-sm-2 control-label">包含就医绿色通道次数</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="greenChannelMedicalTreatment"
+                           name="greenChannelMedicalTreatment" placeholder="请输入包含就医绿色通道次数">  
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="insuranceLiability" class="col-sm-2 control-label">保险责任</label>
+                <div class="col-sm-4">
+                     <textarea class="form-control" rows="5" id="insuranceLiability"
+                               name="insuranceLiability"></textarea>
+                </div>
+                <label for="exclusions" class="col-sm-2 control-label">责任免除</label>
+                <div class="col-sm-4">
+                    <textarea class="form-control" rows="5" id="exclusions"
+                              name="exclusions"></textarea> 
+                </div>
+            </div>
+
+            <div class="mx-auto mt-3 w-60">
+                <button type="button" class="btn w-100" id="insuranceProjectSubmit"
+                        style="background-color: #4E565C;color: #fff">发布
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div th:fragment="js">
+    <script src="/js/addInsuranceProject.js"></script>
+</div>
+</body>
+</html>

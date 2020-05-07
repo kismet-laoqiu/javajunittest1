@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="patient/layout">
+<head>
+</head>
+<body>
+<div th:fragment="css">
+
+</div>
+<div th:fragment="content">
+    <ul class="breadcrumb">
+        <li><a href="/patient/home"><i class="fa fa-home mr-1"></i>主页</a></li>
+        <li><a href="/patient/listPayRecord">支付查看</a></li>
+        <li class="active">支付</li>
+    </ul>
+    <div class="w-60 mx-auto mt-3">
+        <h1 class="text-center mb-3">支付详情</h1>
+        <ul class="list-group ">
+            <li class="list-group-item"><span class="content-right" th:text="${record.name}"></span>名称:</li>
+            <li class="list-group-item"><span class="content-right" th:text="${record.gender}"></span>性别:</li>
+            <li class="list-group-item"><span class="content-right" th:text="${record.age}"></span>年龄:</li>
+            <li class="list-group-item">主治医生: <span class="content-right"  th:text="${user.name}"></span></li>
+            <li class="list-group-item">医院:<span  class="content-right"th:text="${user.doctorInfo.hospital}"></span></li>
+            <li class="list-group-item">科室:<span class="content-right" th:text="${user.doctorInfo.department}"></span></li>
+            <li class="list-group-item"><span class="content-right" th:text="${record.diseaseType}"></span>疾病类型:</li>
+            <li class="list-group-item"><span class="content-right" th:text="${record.cost}"></span>治疗费用:</li>
+            <li class="list-group-item">
+                <span class="content-right" th:text="${#dates.format(record.createTime, 'yyyy年MM月dd日 HH:mm:ss')}"></span>创建时间:
+            </li>
+        </ul>
+    </div>
+</div>
+<div th:fragment="js">
+
+</div>
+</body>
+</html>

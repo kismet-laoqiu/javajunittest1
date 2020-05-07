@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="bank/layout">
+<head>
+</head>
+<body>
+<div th:fragment="css">
+
+</div>
+<div th:fragment="content">
+    <ul class="breadcrumb">
+        <li><a href="/bank/home"><i class="fa fa-home mr-1"></i>主页</a></li>
+        <li><a href="/bank/listUnExaminedMortgage">贷款审核</a></li>
+        <li class="active">贷款记录确认</li>
+    </ul>
+    <div class="w-60 mx-auto mt-3">
+        <h1 class="text-center mb-3">贷款记录</h1>
+        <ul class="list-group">
+            <li class="list-group-item"><span class="content-right" th:text="${mortgage.name}"></span>申请人:</li>
+            <li class="list-group-item"><span class="content-right" th:text="${mortgage.age}"></span>年龄:</li>
+            <li class="list-group-item"><span class="content-right" th:text="${mortgage.gender}"></span>性别:</li>
+            <li class="list-group-item"><span class="content-right" th:text="${mortgage.card}"></span>身份证:</li>
+            <li class="list-group-item"><span class="content-right" th:text="${mortgage.nation}"></span>民族:</li>
+            <li class="list-group-item"><span class="content-right" th:text="${mortgage.occupation}"></span>职业:</li>
+            <li class="list-group-item"><span class="content-right" th:text="${mortgage.diseaseHistory}"></span>疾病史:
+            </li>
+            <li class="list-group-item"><span class="content-right" th:text="${mortgage.phone}"></span>手机号码:</li>
+            <li class="list-group-item"><span class="content-right" th:text="${mortgage.amount}"></span>贷款金额:</li>
+            <li class="list-group-item"><span class="content-right" th:text="${mortgage.income}"></span>家庭收入:</li>
+            <li class="list-group-item"><span class="content-right" th:text="${mortgage.asset}"></span>抵押资产:</li>
+            <li class="list-group-item"><span class="content-right"
+                                              th:text="${#dates.format(mortgage.createTime, 'yyyy年MM月dd日 HH:mm:ss')}"></span>创建时间:
+            </li>
+            <li class="list-group-item"><span class="content-right"><a th:href="${mortgage.certificate}">下载凭证</a></span>凭证:
+            </li>
+        </ul>
+        <div class="row">
+            <div class="col-sm-6 text-center">
+                <button type="button" class="btn w-90 btn-gray" id="agree">同意
+                </button>
+            </div>
+            <div class="col-sm-6 text-center">
+                <button type="button" class="btn w-90 btn-gray" id="refuse">拒绝
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:fragment="js">
+    <script src="/js/lookUnExaminedMortgage.js"></script>
+</div>
+</body>
+</html>

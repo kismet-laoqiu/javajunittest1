@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="patient/layout">
+<head>
+</head>
+<body>
+<div th:fragment="css">
+
+</div>
+<div th:fragment="content">
+    <ul class="breadcrumb">
+        <li><a href="/patient/home"><i class="fa fa-home mr-1"></i>主页</a></li>
+        <li><a href="/patient/listUnConfirmRecord">病历确认</a></li>
+        <li class="active">病历详情</li>
+    </ul>
+    <div class="mx-auto mt-3">
+        <h1 class="text-center mb-3">病历详情</h1>
+        <div class="text-center">创建时间:<span
+                th:text="${#dates.format(record.createTime, 'yyyy年MM月dd日 HH:mm:ss')}"></span>
+        </div>
+
+        <div>
+            <div class="row content">
+                <div class="col-sm-1">名称</div>
+                <div class="col-sm-3" th:text="${record.name}"></div>
+                <div class="col-sm-1">性别</div>
+                <div class="col-sm-3" th:text="${record.gender}"></div>
+                <div class="col-sm-1">年龄</div>
+                <div class="col-sm-3" th:text="${record.age}"></div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm-1">民族</div>
+                <div class="col-sm-3" th:text="${record.nation}"></div>
+                <div class="col-sm-1">血型</div>
+                <div class="col-sm-3" th:text="${record.bloodType}"></div>
+                <div class="col-sm-1">治疗费用</div>
+                <div class="col-sm-3" th:text="${record.cost}"></div>
+            </div>
+
+            <div class="row content d-flex">
+                <div class="col-sm-1">主诉</div>
+                <div class="col-sm-5" th:text="${record.chiefComplaint}"></div>
+                <div class="col-sm-1">现病史</div>
+                <div class="col-sm-5" th:text="${record.presentIllnessHistory}"></div>
+            </div>
+
+            <div class="row content d-flex">
+                <div class="col-sm-1">既往病史</div>
+                <div class="col-sm-5" th:text="${record.pastIllnessHistory}"></div>
+                <div class="col-sm-1">药物过敏史</div>
+                <div class="col-sm-5" th:text="${record.drugAllergyHistory}"></div>
+            </div>
+
+            <div class="row content d-flex">
+                <div class="col-sm-1">个人史</div>
+                <div class="col-sm-5" th:text="${record.personalHistory}"></div>
+                <div class="col-sm-1">家族史</div>
+                <div class="col-sm-5" th:text="${record.familyHistory}"></div>
+            </div>
+
+            <div class="row content d-flex">
+                <div class="col-sm-1">体格检查</div>
+                <div class="col-sm-5" th:text="${record.physicalExamination}"></div>
+                <div class="col-sm-1">疾病类型</div>
+                <div class="col-sm-5" th:text="${record.diseaseType}"></div>
+            </div>
+
+            <div class="row content d-flex">
+                <div class="col-sm-1">门诊体检</div>
+                <div class="col-sm-5" th:text="${record.outpatientPhysicalExamination}"></div>
+                <div class="col-sm-1">辅助检查</div>
+                <div class="col-sm-5" th:text="${record.supplementaryExamination}"></div>
+            </div>
+
+            <div class="row content d-flex">
+                <div class="col-sm-1">门诊诊断</div>
+                <div class="col-sm-5" th:text="${record.outpatientDiagnosis}"></div>
+                <div class="col-sm-1">治疗意见</div>
+                <div class="col-sm-5" th:text="${record.treatmentAdvice}"></div>
+            </div>
+
+            <div class="row content d-flex">
+                <div class="col-sm-1">门诊处理</div>
+                <div class="col-sm-5" th:text="${record.outpatientHandle}"></div>
+                <div class="col-sm-1">门诊医嘱</div>
+                <div class="col-sm-5" th:text="${record.outpatientDoctorAdvice}"></div>
+            </div>
+
+        </div>
+        <div class="w-60 mx-auto mt-3">
+            <button type="button" class="btn w-100" id="confirmRecordSubmit"
+                    style="background-color: #4E565C;color: #fff">
+                病历确认
+            </button>
+        </div>
+    </div>
+</div>
+<div th:fragment="js">
+    <script src="/js/confirmRecord.js"></script>
+</div>
+</body>
+</html>

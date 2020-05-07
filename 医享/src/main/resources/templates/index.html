@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta patientName="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>医享</title>
+    <link rel="shortcut icon" th:href="@{/favicon.ico}"/>
+    <link rel="bookmark" th:href="@{/favicon.ico}"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+
+<nav id="navigation">
+    <div class="container text-center">
+        <ul class="navHold">
+            <li><a href="#">主页</a></li>
+            <li><a href="#">业务介绍</a></li>
+            <li><a href="#">关于我们</a></li>
+            <li><a href="#">联系我们</a></li>
+            <li class="subNav">去登录
+                <ul>
+                    <li><a href="/login?type=patient">患者登录</a></li>
+                    <li><a href="/login?type=doctor">医生登录</a></li>
+                    <li><a href="/login?type=insurer">保险公司登录</a></li>
+                    <li><a href="/login?type=research">研究机构登录</a></li>
+                    <li><a href="/login?type=bank">金融机构登录</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="navResponsive"></div>
+</nav>
+<div class="features-boxed pt-5">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">医享 </h2>
+            <p class="text-center">医享是基于区块链技术的电子医疗记录存储、共享和安全理赔平台，为患者、医生以及第三方机构（如保险公司）服务。</p>
+        </div>
+        <div class="row justify-content-center features">
+            <div class="col-sm-6 col-md-5 col-lg-4 item">
+                <div class="box"><i class="fa fa-map-marker icon"></i>
+                    <h3 class="patientName">安全可靠</h3>
+                    <p class="description">使用同态加密和属性加密，保证数据安全</p><a href="#" class="learn-more">Learn more »</a></div>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-4 item">
+                <div class="box"><i class="fa fa-clock-o icon"></i>
+                    <h3 class="patientName">自由控制访问策略</h3>
+                    <p class="description">患者自由控制医生对病历的访问策略</p><a href="#" class="learn-more">Learn more »</a></div>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-4 item">
+                <div class="box"><i class="fa fa-list-alt icon"></i>
+                    <h3 class="patientName">使用区块链技术</h3>
+                    <p class="description">去中心化，数据可靠，无篡改</p><a href="#" class="learn-more">Learn more »</a></div>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-4 item">
+                <div class="box"><i class="fa fa-list-alt icon"></i>
+                    <h3 class="patientName">使用IPFS星际文件系统，分布式存储病历信息</h3>
+                    <p class="description">分布式，数据无丢失</p><a href="#" class="learn-more">Learn more »</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-basic">
+    <footer>
+        <div class="social">
+            <a href="#"><i class="fa fa-qq" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-weixin" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-weibo" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">主页</a></li>
+            <li class="list-inline-item"><a href="#">业务介绍</a></li>
+            <li class="list-inline-item"><a href="#">关于我们</a></li>
+            <li class="list-inline-item"><a href="#">联系我们</a></li>
+        </ul>
+        <p class="copyright">医享 © 2019</p>
+    </footer>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="/js/index.js"></script>
+</body>
+</html>
