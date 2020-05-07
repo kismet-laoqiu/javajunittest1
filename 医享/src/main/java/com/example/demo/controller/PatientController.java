@@ -85,7 +85,7 @@ public class PatientController {
         HttpSession session = request.getSession();
         long patientId = (long) session.getAttribute("userId");
         Map<String, Object> map = new HashMap<>();
-        mortgage.setBank(userService.findUserById(14L));
+        mortgage.setBank(userService.findUserById(38));
         map.put("state", mortgageService.addMortgage(mortgage, patientId,file));
         return map;
     }

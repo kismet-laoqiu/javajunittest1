@@ -21,7 +21,7 @@ contract Account {
         entityMap[Id] = Entity(Id, Type, Name, Rest);
     }
 
-    function issue(string Id, uint Money) {
+    function issue(string Id, uint Money) {//充值
         Entity entity = entityMap[Id];
         entity.Rest = entity.Rest + Money;
         entityMap[Id] = entity;
