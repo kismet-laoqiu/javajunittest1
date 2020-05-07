@@ -1,0 +1,93 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'UI.ui'
+#
+# Created by: PyQt5 UI code generator 5.11.3
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(622, 393)
+        MainWindow.setMinimumSize(QtCore.QSize(622, 393))
+        MainWindow.setMaximumSize(QtCore.QSize(622, 393))
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.state_button = QtWidgets.QPushButton(self.centralwidget)
+        self.state_button.setGeometry(QtCore.QRect(410, 20, 93, 29))
+        self.state_button.setObjectName("state_button")
+        self.end_button = QtWidgets.QPushButton(self.centralwidget)
+        self.end_button.setGeometry(QtCore.QRect(510, 20, 93, 29))
+        self.end_button.setObjectName("end_button")
+        self.url_label = QtWidgets.QLabel(self.centralwidget)
+        self.url_label.setGeometry(QtCore.QRect(20, 20, 81, 29))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.url_label.sizePolicy().hasHeightForWidth())
+        self.url_label.setSizePolicy(sizePolicy)
+        self.url_label.setObjectName("url_label")
+        self.toolButton = QtWidgets.QToolButton(self.centralwidget)
+        self.toolButton.setGeometry(QtCore.QRect(480, 320, 121, 21))
+        self.toolButton.setObjectName("toolButton")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(20, 320, 141, 16))
+        self.label.setObjectName("label")
+        self.log = QtWidgets.QTextEdit(self.centralwidget)
+        self.log.setGeometry(QtCore.QRect(20, 100, 581, 201))
+        self.log.setObjectName("log")
+        self.url_text = QtWidgets.QLineEdit(self.centralwidget)
+        self.url_text.setGeometry(QtCore.QRect(110, 20, 284, 29))
+        self.url_text.setObjectName("url_text")
+        self.url_label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.url_label_2.setGeometry(QtCore.QRect(20, 60, 121, 29))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.url_label_2.sizePolicy().hasHeightForWidth())
+        self.url_label_2.setSizePolicy(sizePolicy)
+        self.url_label_2.setObjectName("url_label_2")
+        self.url_num_text = QtWidgets.QLineEdit(self.centralwidget)
+        self.url_num_text.setGeometry(QtCore.QRect(150, 60, 61, 29))
+        self.url_num_text.setAlignment(QtCore.Qt.AlignCenter)
+        self.url_num_text.setObjectName("url_num_text")
+        self.url_label_3 = QtWidgets.QLabel(self.centralwidget)
+        self.url_label_3.setGeometry(QtCore.QRect(410, 60, 121, 29))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.url_label_3.sizePolicy().hasHeightForWidth())
+        self.url_label_3.setSizePolicy(sizePolicy)
+        self.url_label_3.setObjectName("url_label_3")
+        self.sql_num_text = QtWidgets.QLineEdit(self.centralwidget)
+        self.sql_num_text.setGeometry(QtCore.QRect(540, 60, 61, 29))
+        self.sql_num_text.setAlignment(QtCore.Qt.AlignCenter)
+        self.sql_num_text.setObjectName("sql_num_text")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 622, 26))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "SQL注入检测"))
+        self.state_button.setText(_translate("MainWindow", "开始"))
+        self.end_button.setText(_translate("MainWindow", "结束"))
+        self.url_label.setText(_translate("MainWindow", "网站域名："))
+        self.toolButton.setText(_translate("MainWindow", "导出日志..."))
+        self.label.setText(_translate("MainWindow", "powered by 邱柯铭"))
+        self.url_label_2.setText(_translate("MainWindow", "已检测网页数量："))
+        self.url_num_text.setText(_translate("MainWindow", "0"))
+        self.url_label_3.setText(_translate("MainWindow", "已检测漏洞数量："))
+        self.sql_num_text.setText(_translate("MainWindow", "0"))
+
