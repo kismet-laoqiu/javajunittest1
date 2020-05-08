@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.yhy.justfortest">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/logo2"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/logo2"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Activities.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activities.MainActivity" />
+        <activity android:name=".Activities.ResignActivity" />
+        <activity android:name=".Activities.Introduction" />
+        <activity android:name=".Activities.GoodActivity" />
+        <activity android:name=".Activities.ServiceActivity" />
+        <activity android:name=".Activities.CodeActivity" />
+        <activity android:name=".Activities.InfoActivity" />
+        <activity android:name=".Activities.UserInfoActivity" />
+        <activity android:name=".Activities.AccountManageActivity" />
+        <activity android:name=".Activities.CorrectPasswordActivity" />
+        <activity android:name=".Activities.MessageActivity" />
+        <activity android:name=".Activities.MessageCenterActivity" />
+        <activity android:name=".Activities.GoodInfoActivity" />
+        <activity android:name=".Activities.ZhuanZhangActivity" />
+        <activity android:name=".Activities.CardActivity" />
+        <activity android:name=".Activities.baoxiaoActivity" />
+        <activity android:name=".Activities.ErweimaActivity" />
+        <activity android:name=".Activities.HuaQiActivity" />
+        <activity android:name=".Activities.SelectYin" />
+    </application>
+
+</manifest>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wodejiemian1"
+    tools:context=".Framents.firstPageFragment">
+
+    <ImageView
+        android:id="@+id/user_head_img"
+        android:layout_width="53dp"
+        android:layout_height="43dp"
+        android:layout_marginLeft="90px"
+        android:layout_marginTop="170px"
+        android:alpha="0" />
+       <LinearLayout
+            android:layout_width="300px"
+            android:layout_height="150px"
+            android:layout_marginLeft="320px"
+            android:layout_marginTop="149px"
+            android:orientation="vertical">
+
+           <TextView
+               android:id="@+id/user_name"
+               android:layout_width="match_parent"
+               android:layout_height="70px"
+               android:gravity="center"
+               android:text="测试昵称"
+               android:textSize="20sp" />
+            <TextView
+                android:id="@+id/user_tel"
+                android:layout_marginTop="20px"
+                android:layout_width="match_parent"
+                android:layout_height="50px"
+                android:text="187xxxxxxxx"
+                android:gravity="center"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="107px"
+        android:layout_marginTop="732px"
+        android:orientation="vertical"
+        android:layout_width="866px"
+        android:layout_height="850px">
+
+        <RelativeLayout
+            android:id="@+id/account_manage"
+            android:layout_width="866px"
+            android:layout_height="100px"
+            android:alpha="0"
+            android:background="#000000"></RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="15dp"
+            android:alpha="0"
+            android:background="#000000"
+            android:id="@+id/message_center"
+            android:layout_width="866px"
+            android:layout_height="100px"
+
+            >
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="15dp"
+            android:alpha="0"
+            android:background="#000000"
+            android:id="@+id/my_money"
+            android:layout_width="866px"
+            android:layout_height="100px"
+            >
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="15dp"
+            android:alpha="0"
+            android:background="#000000"
+            android:id="@+id/my_fold"
+            android:layout_width="866px"
+            android:layout_height="100px"
+            >
+             </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="17dp"
+            android:alpha="0"
+            android:background="#000000"
+            android:id="@+id/my_bank_card"
+            android:layout_width="866px"
+            android:layout_height="100px"
+            >
+
+             </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

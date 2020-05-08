@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="1700px"
+    android:background="#8c97cb">
+    <com.example.yhy.justfortest.UI.CircleImageView
+        android:alpha="1"
+        android:background="#8c97cb"
+        android:src="@drawable/head_img2"
+        android:layout_marginTop="93px"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="135px"
+        />
+    <TextView
+        android:gravity="center"
+        android:id="@+id/draw_text_name"
+        android:layout_marginTop="120px"
+        android:layout_marginLeft="502px"
+        android:layout_width="235px"
+        android:layout_height="90px"
+        android:text="测试昵称"
+        />
+    <TextView
+        android:id="@+id/draw_text_tel"
+        android:layout_marginTop="230px"
+        android:gravity="center"
+        android:text="187xxxxxxxx"
+        android:layout_marginLeft="502px"
+        android:layout_width="235px"
+        android:layout_height="60px" />
+    <TextView
+        android:id="@+id/menu_id"
+        android:text="身份证号：123456789012345678"
+        android:layout_marginTop="461px"
+        android:layout_marginLeft="200px"
+        android:layout_width="600px"
+        android:layout_height="60px" />
+    <TextView
+        android:id="@+id/menu_ent"
+        android:layout_marginTop="596px"
+        android:layout_marginLeft="200px"
+        android:layout_width="600px"
+        android:layout_height="60px"
+        android:text="所属企业：拼多多"/>
+</RelativeLayout>

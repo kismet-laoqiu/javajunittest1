@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="1100px"
+    android:layout_height="1750px"
+     android:id="@+id/draw_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Framents.firstPageFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="89dp"
+            android:background="#8a95c8">
+
+            <Button
+                android:id="@+id/draw_bt"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_marginLeft="54px"
+                android:layout_marginTop="37px"
+                android:background="@drawable/icon2" />
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_marginLeft="860px"
+                android:layout_marginTop="37px"
+                android:src="@drawable/saoyisao" />
+
+            <LinearLayout
+                android:id="@+id/lv_bt"
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:layout_marginLeft="961px"
+                android:clickable="true"
+                android:focusable="true">
+
+                <com.carlos.notificatoinbutton.library.NotificationButton
+                    android:id="@+id/first_message"
+                    android:layout_width="80px"
+                    android:layout_height="80px"
+                    android:layout_marginTop="20px"
+
+                    android:background="@drawable/xiaoxi" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/daikuan_1"
+                android:layout_width="350px"
+                android:layout_height="100px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="13dp"
+                android:gravity="center"
+                android:text="现金贷"
+                android:textColor="#ffffff"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/first_page_back"
+            android:layout_marginTop="89dp"
+            android:background="@drawable/xianjinshangsheng"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            >
+
+            <TextView
+
+                android:id="@+id/daikuan_qingkuang"
+                android:layout_width="wrap_content"
+                android:layout_height="60px"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/yuer_first"
+                android:layout_marginStart="22dp"
+                android:gravity="center"
+                android:text="4100000/5000000" />
+
+            <TextView
+                android:id="@+id/yuer_first"
+                android:layout_width="76dp"
+                android:layout_height="60px"
+                android:layout_alignTop="@+id/first_percent"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="120000" />
+
+            <TextView
+                android:id="@+id/first_percent"
+                android:layout_width="160px"
+                android:layout_height="90px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="102dp"
+                android:layout_marginEnd="70dp"
+                android:gravity="center"
+                android:text="17%"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/zhuanzhang"
+                android:layout_width="52dp"
+                android:layout_height="49dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/huankuan"
+                android:layout_marginStart="30dp"
+                android:alpha="0"
+                android:background="@drawable/zhuanhuan2" />
+
+            <Button
+                android:id="@+id/huankuan"
+                android:layout_width="52dp"
+                android:layout_height="49dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/yanqi"
+                android:layout_marginStart="118dp"
+                android:alpha="0"
+                android:background="@drawable/zhuanhuan2" />
+
+            <Button
+                android:id="@+id/yanqi"
+                android:layout_width="52dp"
+                android:layout_height="49dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/zhuanhuan2"
+                android:layout_marginEnd="115dp"
+                android:alpha="0"
+                android:background="@drawable/zhuanhuan2" />
+
+            <Button
+                android:alpha="0"
+                android:id="@+id/zhuanhuan2"
+                android:layout_width="52dp"
+                android:layout_height="49dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="21dp"
+                android:layout_marginEnd="31dp"
+                android:background="@drawable/zhuanhuan2" />
+
+        </RelativeLayout>
+          </RelativeLayout>
+      <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="800px"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+          android:background="#8c97cb"
+        />
+</android.support.v4.widget.DrawerLayout>

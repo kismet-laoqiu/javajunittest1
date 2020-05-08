@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".Activities.GoodInfoActivity">
+    <com.example.yhy.justfortest.UI.HeadPart
+        android:id="@+id/good_info_title"
+        android:layout_width="match_parent"
+        android:layout_height="73px"
+        android:layout_marginTop="93px">
+
+    </com.example.yhy.justfortest.UI.HeadPart>
+
+    <RelativeLayout
+        android:layout_width="966px"
+        android:layout_height="1282px"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shangpin">
+
+        <TextView
+            android:id="@+id/tv_good_item_name"
+            android:layout_width="133dp"
+            android:layout_height="80px"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="267px"
+            android:gravity="center"
+            android:text="蓝色领带"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_good_item_price"
+            android:layout_width="83dp"
+            android:layout_height="80px"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="137dp"
+            android:gravity="center"
+            android:text="$230" />
+
+        <TextView
+            android:id="@+id/tv_good_item_describe"
+            android:layout_width="750px"
+            android:layout_height="200px"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="560px"
+            android:gravity="center"
+            android:text="这是一个介绍" />
+
+        <ImageView
+            android:id="@+id/jianshao"
+            android:layout_width="66px"
+            android:layout_height="66px"
+            android:layout_marginLeft="652px"
+            android:layout_marginTop="904px"
+            android:src="@drawable/jianshao_l" />
+
+        <TextView
+            android:id="@+id/buy_num"
+            android:layout_width="90px"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="742px"
+            android:layout_marginTop="910px"
+            android:gravity="center"
+            android:text="1" />
+
+        <ImageView
+            android:id="@+id/zengjia"
+            android:layout_width="66px"
+            android:layout_height="66px"
+            android:layout_marginLeft="852px"
+            android:layout_marginTop="904px"
+            android:src="@drawable/tianjia2" />
+
+        <TextView
+            android:id="@+id/tv_good_total_price"
+            android:layout_width="380px"
+            android:layout_height="70px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="69dp"
+            android:gravity="center"
+            android:text="$123" />
+
+        <Button
+            android:id="@+id/good_zhifu"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1130px"
+            android:alpha="0" />
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/image_good_info"
+        android:layout_marginTop="176px"
+        android:layout_marginLeft="209px"
+        android:layout_width="663px"
+        android:layout_height="324px" />
+
+</RelativeLayout>

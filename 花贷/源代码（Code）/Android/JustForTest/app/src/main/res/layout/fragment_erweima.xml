@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    tools:context=".Framents.firstPageFragment">
+    <RelativeLayout
+        android:layout_marginLeft="105px"
+        android:layout_marginTop="200px"
+        android:layout_width="864px"
+        android:layout_height="808px"
+        android:background="@drawable/fang_kuang">
+        <ImageView
+            android:id="@+id/erweima_im"
+            android:layout_marginLeft="200px"
+            android:layout_marginTop="170px"
+            android:layout_width="467px"
+            android:layout_height="467px" />
+    </RelativeLayout>
+    <Button
+        android:id="@+id/first_bt"
+        android:layout_marginTop="200px"
+        android:layout_marginLeft="211px"
+        android:background="@drawable/cai_kuang"
+        android:textColor="#ffffff"
+        android:layout_centerHorizontal="true"
+        android:layout_width="450px"
+        android:layout_height="100px"
+        android:text="付款二维码"/>
+
+
+    <TextView
+        android:id="@+id/second_bt"
+        android:layout_width="864px"
+        android:layout_height="200px"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginTop="850px"
+        android:background="@drawable/kuang"
+        android:gravity="center"
+        android:text="无商品"
+        android:textColor="#bcbcbc" />
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/third_bt"
+        android:layout_width="864px"
+        android:layout_height="200px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="950px"
+        android:background="@drawable/kuang"
+        android:text="无商品"
+        android:textColor="#bcbcbc" />
+
+    <TextView
+        android:layout_width="288dp"
+        android:layout_height="200px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1050px"
+        android:background="@drawable/kuang"
+        android:textColor="#bcbcbc" />
+
+    <Button
+        android:layout_width="953px"
+        android:layout_height="228px"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1150px"
+        android:background="@drawable/blue_kuang" />
+</RelativeLayout>

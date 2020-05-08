@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/sign.css}">
+    <title>登录</title>
+</head>
+<body>
+<div class="container-box">
+    <div class="container login-window">
+        <h3 id="login-label">用户登录</h3>
+        <form  th:action="@{/login1}" method="get">
+            <div class="login-list">
+                <div>
+                    <input type="email" class="login-input" name="username" id="usernameInput" placeholder="用户名">
+                </div>
+                <div>
+                    <input type="password" class="login-input" name="password" id="passwordInput" placeholder="密码">
+                </div>
+                <div class="login-verify">
+                    <input class="login-input" id="verificationInput" placeholder="验证码">
+                </div>
+            </div>
+            <div id="verificationImg"></div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="rememberPassword">
+                <label for="rememberPassword">记住密码</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" id="loginBtn">登录</button>
+            <small id="forgetPassword" class="text-muted">忘记密码？</small>
+        </form>
+    </div>
+</div>
+
+
+<script th:src="@{/js/jquery.js}" ></script>
+<script th:src="@{/js/popper.js}" ></script>
+<script th:src="@{/js/bootstrap.js}" ></script>
+<script th:src="@{/js/login.js}"></script>
+
+</body>
+</html>

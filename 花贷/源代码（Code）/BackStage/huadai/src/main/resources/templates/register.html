@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/sign.css}">
+    <title>注册</title>
+</head>
+<body>
+<div class="container-box">
+    <div class="register-box">
+        <div class="row justify-content-center">
+            <div class="register-nav col-10">
+            <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
+                <li class="nav-item" id="register-item1">
+                    <a class="nav-link active" id="pills-info-tab" data-toggle="pill" href="#pills-info" role="tab" aria-controls="pills-info" aria-selected="true">填写认证信息</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" id="pills-upload-tab" data-toggle="pill" href="#pills-file" role="tab" aria-controls="pills-upload" aria-selected="false">上传认证材料</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" id="pills-waiting-tab" data-toggle="pill" href="#pills-waiting" role="tab" aria-controls="pills-waiting" aria-selected="false">等待审核</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" id="pills-pass-tab" data-toggle="pill" href="#pills-pass" role="tab" aria-controls="pills-pass" aria-selected="false">审核通过</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="register-body col-10">
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-info" role="tabpanel" aria-labelledby="pills-info-tab">
+                        <div class="row">
+                            <span class="register-tip">请填写您的企业信息</span>
+                        </div>
+                        <div class="row col-12">
+                            <div class="register-info-label col-2">
+                                <label for="enterpriseName">企业名称</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="enterpriseName" name="enterprisename" aria-describedby="enterpriseName">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                            <div class="register-info-label col-2">
+                                <label for="businessLicence">营业执照注册号</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="businessLicence" name="businesslicence" aria-describedby="businessLicence">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <span class="register-tip">请填写对公账户信息</span>
+                        </div>
+                        <div class="row col-12">
+                            <div class="register-info-label col-2">
+                                <label for="publicAccounts">公司对公账号</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="publicAccounts" name="publicaccounts" aria-describedby="enterpriseName">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                            <div class="register-info-label col-2">
+                                <label for="depositBank">对公账号开行户</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="depositBank" name="depositbank" aria-describedby="businessLicence">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="register-info-label col-2">
+                                <label for="accountName">银行开户名</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="accountName" name="accountname" aria-describedby="enterpriseName">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                            <div class="register-info-label col-2">
+                                <label for="accountOwner">注册人姓名</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="accountOwner" name="accountowner" aria-describedby="businessLicence">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="register-info-label col-2">
+                                <label for="ownerIdentification">注册人证件号</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="ownerIdentification" name="owneridentification" aria-describedby="enterpriseName">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                            <div class="register-info-label col-2">
+                                <label for="ownerNumber">注册人联系方式</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="ownerNumber" name="ownernumber" aria-describedby="businessLicence">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                        </div>
+                        <div class="row justify-content-end">
+                            <button id="register-info-btn" type="submit" class="btn btn-primary">下一步</button>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="pills-file" role="tabpanel" aria-labelledby="pills-upload-tab">
+                        <div class="row">
+                            <span id="register-tip1">请上传认证材料</span>
+                        </div>
+                        <hr/>
+                        <div class="row register-file-row">
+                            <label class="col-2 col-md-5 register-info-label" >附件：</label>
+                            <a class="file col-3" >
+
+                                <input type="file" class="form-control-file " id="registerFile" placeholder="upload" style="display: none;">
+                                <button class="btn btn-outline-secondary" id="uploadFile" style="height:80%;">上传文件</button>
+
+
+                            </a>
+                            <label id="filePath" class="col-3" for="registerFile"></label>
+
+                        </div>
+                        <div class="row justify-content-center">
+                            <small>提示：请上传认证材料的清晰照片(jpg、png格式)或pdf文档，否则将会影响您的认证，文件最大不超过30mb</small>
+                        </div>
+                        <button id="register-file-btn" class="btn btn-primary">下一步</button>
+                    </div>
+                    <div class="tab-pane fade" id="pills-waiting" role="tabpanel" aria-labelledby="pills-waiting-tab">
+                        <div class="register-waiting-tip">
+                            <span>审核中...</span>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-pass" role="tabpanel" aria-labelledby="pills-pass-tab">
+                        <div class="register-waiting-tip">
+                            <span>审核通过</span>
+                        </div>
+                        <div class="row justify-content-center">
+                            <span>您的用户id为<span id="userId">*********</span>,现在就去
+                                <a href="#">完善资料</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/jquery.js}" ></script>
+<script th:src="@{/js/popper.js}" ></script>
+<script th:src="@{/js/bootstrap.js}" ></script>
+<script th:src="@{/js/register.js}"></script>
+</body>
+</html>

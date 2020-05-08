@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/login_back3"
+    tools:context="com.example.yhy.justfortest.Activities.LoginActivity">
+
+
+    <EditText
+        android:textSize="14sp"
+        android:id="@+id/et_login_account"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/et_login_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-237dp"
+        android:background="@null"
+        android:hint="身份证"
+        />
+
+
+    <EditText
+        android:textSize="14sp"
+        android:id="@+id/et_login_password"
+        android:layout_width="180dp"
+        android:layout_height="96px"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="260dp"
+        android:background="@null"
+        android:hint="密码"
+        android:inputType="textPassword" />
+
+
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="260dp"
+        android:layout_height="36dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="247dp"
+        android:alpha="0"
+        android:background="#000000"
+        android:gravity="center"
+        android:text="LOG IN"
+        android:textColor="#ffffff"
+        android:textSize="30sp" />
+    <Button
+        android:visibility="gone"
+        android:id="@+id/bt_resign"
+        android:layout_width="833px"
+        android:layout_height="127px"
+        android:layout_marginTop="150px"
+        android:background="@drawable/shape_button"
+        android:gravity="center"
+        android:text="LOG IN"
+        android:textColor="#ffffff"
+        android:textSize="30sp" />
+
+</RelativeLayout>
+
+
+

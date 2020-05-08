@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/service_item_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="300dp"
+
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#cad3ff"
+        android:layout_margin="5dp">
+        <RelativeLayout
+
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="#ffffff"
+            >
+            <TextView
+                android:id="@+id/item_sevice_name"
+                android:layout_alignParentLeft="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="服务名称"
+                android:textSize="10sp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center|start"
+                />
+            <TextView
+                android:id="@+id/item_sevice_price"
+                android:layout_alignParentRight="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="服务名称"
+                android:textSize="10sp"
+                android:textColor="#fbb077"
+                android:layout_marginRight="10dp"
+                android:gravity="center|end"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

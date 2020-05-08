@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/register.css">
+    <title>注册</title>
+</head>
+<body>
+<div class="container-box">
+    <div class="register-box">
+        <div class="row justify-content-center">
+            <div class="register-nav col-10">
+            <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
+                <li class="nav-item" id="register-item1">
+                    <a class="nav-link active" id="pills-info-tab" data-toggle="pill" href="#pills-info" role="tab" aria-controls="pills-info" aria-selected="true">填写认证信息</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" id="pills-pass-tab" data-toggle="pill" href="#pills-pass" role="tab" aria-controls="pills-pass" aria-selected="false">等待审核</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="register-body col-10">
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-info" role="tabpanel" aria-labelledby="pills-info-tab">
+                        <div class="row">
+                            <span class="register-tip">请填写您的个人信息</span>
+                        </div>
+                        <div class="row col-12">
+                            <div class="register-info-label col-2">
+                                <label for="username">用户名</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="username" aria-describedby="username">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                            <div class="register-info-label col-2">
+                                <label for="password">密码</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="password" aria-describedby="password">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="register-info-label col-2">
+                                <label for="identification">身份证号</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="identification" aria-describedby="identification">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                            <div class="register-info-label col-2">
+                                <label for="enterprisename">企业名称</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="enterprisename" aria-describedby="enterprisename">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                        </div>
+<!--                        <div class="row col-12">-->
+<!--                            <div class="register-info-label col-2">-->
+<!--                                <label for="email">邮件</label>-->
+<!--                            </div>-->
+<!--                            <div class="register-info-input col-3">-->
+<!--                                <input class="register-form-control" id="email" aria-describedby="email">-->
+<!--                                <span class="register-info-mark">*</span>-->
+<!--                            </div>-->
+<!--                            <div class="register-info-label col-2">-->
+<!--                                <label for="cardNumber">花旗银行卡号</label>-->
+<!--                            </div>-->
+<!--                            <div class="register-info-input col-3">-->
+<!--                                <input class="register-form-control" id="cardNumber" aria-describedby="cardNumber">-->
+<!--                                <span class="register-info-mark">*</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="row col-12">
+                            <div class="register-info-label col-2">
+                                <label for="card">银行卡号</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="card" aria-describedby="card">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                            <div class="register-info-label col-2">
+                                <label for="cardpassword">银行卡密码</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="cardpassword" aria-describedby="cardpassword">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="row col-12">
+                            <div class="register-info-label col-2">
+                                <label for="phonenum">手机号码</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="phonenum" aria-describedby="phoneNumber">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                            <div class="register-info-label col-2">
+                                <label for="vercode">验证码</label>
+                            </div>
+                            <div class="register-info-input col-3">
+                                <input class="register-form-control" id="vercode" aria-describedby="vercode">
+                                <span class="register-info-mark">*</span>
+                            </div>
+                            <div class="register-info-input col-2">
+                                <button id="verification-send-btn" class="btn btn-outline-primary">发送验证码</button>
+                            </div>
+                        </div>
+                        <br/>
+
+                        <div class="row justify-content-end">
+                            <button id="register-info-btn" type="submit" class="btn btn-primary">下一步</button>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade register-center-tab" id="pills-pass" role="tabpanel" aria-labelledby="pills-pass-tab">
+                        <div class="row justify-content-center">
+                            <p>审核结果将会以短信或邮件的方式通知，请及时查看！</p>
+                        </div>
+                        <button id="register-pass-btn" class="btn btn-primary">返回</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/staffregister.js"></script>
+</body>
+</html>

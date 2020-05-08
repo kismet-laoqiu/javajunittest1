@@ -1,0 +1,217 @@
+
+
+html,body{
+    height:100%;
+    width:100%;
+}
+.blog{
+    height:100%;
+    width:100%;
+}
+.topbar{
+    z-index: 1;
+    background-color: white;
+    box-shadow:3px 0px 10px  #D3D3D3;
+}
+.navbar-brand {
+    padding: 0px;
+    padding-left: 10px;
+    line-height: 50px;
+}
+.navbar-brand span{
+
+}
+.index-body{
+    width: 100%;
+    height:100%;
+    background-color: white;
+}
+.index-body .row{
+    width:100%;
+    height:100%;
+}
+.choice-tab{
+    height:100%;
+    background-color: white;
+    box-shadow: 3px 0px 10px  #D3D3D3;
+    padding:15% 0;
+}
+.nav-item{
+    margin: 5%;
+}
+.nav-link{
+    color: #6e6e6e;
+}
+.nav-pills .nav-link.active{
+    color: #507bee;
+    background-color: inherit;
+}
+.tab-content{
+    width: 100%;
+    height:100%;
+}
+.tab-pane{
+    height:100%;
+    width:100%;
+}
+.home-body{
+    /*background-color: #507bee;*/
+    /*height:inherit;*/
+    margin:2% 0;
+    width: 100%;
+
+}
+#home-body-details{
+    padding:0 1%;
+    width:100%;!important;
+}
+#home-body-details .list-group-item{
+    color: #6e6e6e;
+    padding:1.7rem;
+    font-size: small;
+}
+.home-body-part{
+    background-color: white;
+    box-shadow: 3px 0px 10px  #D3D3D3;
+    margin: 2%;
+    border-radius: 2px;
+}
+.home-month-icon{
+    /*background-color: #507bee;*/
+    background-color: 	#6495ED;
+    color:#fff;
+    border-radius: 50%;
+    width:32px;
+    height:32px;
+    text-align: center;
+    box-shadow:3px 0px 10px  #D3D3D3;
+    padding:auto;
+}
+.home-month-money{
+    color: 	#1E90FF;
+    margin:auto;
+}
+#home-limit{
+    margin-top: 7%;
+}
+.home-limit-detials{
+    margin:7% 0 8% 0;
+    text-align: center;
+}
+.user-details{
+    padding: 1.5625rem;
+}
+.user-title{
+    font-size: 1.25rem;
+}
+.user-info{
+    font-size: 1rem;
+}
+#user-image img{
+    border-radius: 50%;
+}
+.user-block-container .card-footer{
+    text-align: center;
+}
+/*.card-footer div{*/
+    /*border:1px solid rgba(0,0,0,.125);*/
+/*}*/
+.user-company{
+    margin: auto;
+}
+.user-company h5,.user-company p{
+    font-size: medium;
+}
+#record{
+    margin-top:5px;
+    margin-right: -6%;
+}
+#record .table thead th{
+    border:none;
+}
+#record table td,#record .table th{
+    border:none;
+}
+/*以下是后加的*/
+
+.service-block{
+    padding: 1.25rem 3.75rem;
+    color: #6e6e6e;
+}
+
+.service-block:hover{
+    text-decoration: none;
+}
+
+.service-block-container{
+    padding: 1rem;
+}
+
+.service-block-img{
+    width: 100%;
+    box-shadow:3px 0px 10px  #D3D3D3;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.service-block-text{
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.carousel-indicators {
+    bottom: -0.3125rem;
+}
+
+.carousel-indicators li {
+    background-color: #D3D3D3;
+    box-shadow:3px 0px 10px  #D3D3D3;
+}
+
+.carousel-indicators .active {
+    background-color: #6e6e6e;
+}
+
+.staff-block-container{
+    padding: 1.5625rem 0.3125rem 0.8125rem;
+}
+
+.staff-title{
+    font-size: large;
+    text-align: center;
+    margin: auto;
+}
+
+.staff-record-filter input{
+    -webkit-appearance: none;
+}
+
+.staff-checked
+{
+    color: #1E90FF;
+}
+
+.accept-modal-label {
+    text-align: center;
+    padding-top: 0.5rem;
+}
+
+#acceptModalBody{
+    padding: 1.875rem 1.25rem 1rem;
+}
+
+#refuseTextarea{
+    resize: none;
+}
+
+label.form-check-label.refuse-reason-label {
+    padding: 0.5rem 0.9rem;
+}
+
+#refuseTextareaLabel{
+    margin-left: 1.5625rem;
+}

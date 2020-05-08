@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CitiBank</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/staff.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="js/echarts.min.js"></script>
+
+</head>
+<body>
+    <div class="blog">
+        <nav class="navbar navbar-light  topbar">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" height="32" width="32" >
+                <span>花贷</span>
+            </a>
+        </nav>
+        <div class="index-body">
+            <div class="row">
+                <div class="col-2">
+                    <div class="choice-tab">
+                        <ul class="nav nav-pills mb-3 col-12" id="pills-tab" role="tablist" >
+                            <li class="nav-item col-12">
+                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
+                                    <div class="row justify-content-between">
+                                        <div class="col-4">
+                                            <img src="images/barrage_fill.png" height="24" width="24">
+                                        </div>
+                                        <div class="col-8">
+                                            <span>首页</span>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </li>
+                            <li class="nav-item col-12">
+                                <a class="nav-link" id="pills-user-tab" data-toggle="pill" href="#pills-user" role="tab" aria-controls="pills-user" aria-selected="false">
+                                    <div class="row justify-content-between">
+                                        <div class="col-4">
+                                            <img src="images/people_fill.png" height="24" width="24">
+                                        </div>
+                                        <div class="col-8">
+                                            <span>个人中心</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item col-12">
+                                <a class="nav-link" id="pills-staff-tab" data-toggle="pill" href="#pills-shop" role="tab" aria-controls="pills-shop" aria-selected="false">
+                                    <div class="row justify-content-between">
+                                    <div class="col-4">
+                                        <img src="images/coupons_fill.png" height="24" width="24">
+                                    </div>
+                                    <div class="col-8">
+                                        <span>商城</span>
+                                    </div>
+                                </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-10">
+                    <div class="tab-content" id="pills-tabContent">
+                        <!--首页-->
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                            <div class="row" style="height: initial;">
+                                <div class="col-9" >
+                                    <div class="card border-light mb-3 home-body-part" style="width:100%;">
+                                        <div class="card-body">
+                                            <div id="charts" style="width: 100%;height:100%;">
+                                                <div id="main" style="width: 100%;height:300px; cursor: pointer;"></div>
+                                                <script type="text/javascript">
+                                                    // 基于准备好的dom，初始化echarts实例
+                                                    var myChart = echarts.init(document.getElementById('main'));
+
+                                                    // 指定图表的配置项和数据
+                                                    var option = {
+                                                        title: {
+                                                            text: '账户贷款额波动情况'
+                                                        },
+                                                        tooltip: {
+                                                            trigger: 'axis'
+                                                        },
+                                                        legend: {
+                                                            data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+                                                        },
+                                                        grid: {
+                                                            left: '3%',
+                                                            right: '4%',
+                                                            bottom: '10%',
+                                                            containLabel: true
+                                                        },
+                                                        toolbox: {
+                                                            feature: {
+                                                                dataZoom:{
+                                                                  yAxisIndex:'none'
+                                                                },
+                                                                restore:{},
+                                                                saveAsImage: {}
+                                                            }
+                                                        },
+                                                        xAxis: {
+                                                            type: 'category',
+                                                            boundaryGap: false,
+                                                            axisLine:{
+                                                                lineStyle:{
+                                                                    color:'#bfbfbf'
+                                                                },
+                                                                interval:0
+                                                            },
+                                                            data: ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']
+                                                        },
+                                                        yAxis: {
+                                                            type: 'value',
+                                                            axisLine:{
+                                                                lineStyle:{
+                                                                    color:'#bfbfbf'
+                                                                }
+                                                            }
+                                                        },
+                                                        dataZoom:{
+                                                            show: true,
+                                                            type:'slider',
+                                                            start:0,
+                                                            end:50,
+                                                            top:'92%',
+                                                            bottom: 'auto',
+                                                            height:15,
+                                                            handleIcon: 'image://images/handle.png'
+                                                        },
+
+                                                        series: [
+                                                            {
+                                                                name:'测试',
+                                                                type:'line',
+                                                                stack: '总量',
+                                                                itemStyle : {
+                                                                    normal: {   //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
+                                                                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1,[{
+                                                                                offset: 0, color: '#b8c9f8' // 0% 处的颜色
+                                                                            }, {
+                                                                                offset: 0.5, color: '#b8c9f8' // 100% 处的颜色
+                                                                            }, {
+                                                                                offset: 1, color: '#fff' // 100% 处的颜色
+                                                                            }]
+                                                                        ),  //背景渐变色
+                                                                        lineStyle: {        // 系列级个性化折线样式
+                                                                            width: 3,
+                                                                            type: 'solid',
+                                                                            color: "#507bee"
+                                                                        }
+                                                                    },
+                                                                    emphasis: {
+                                                                        color: '#507bee',
+                                                                        lineStyle: {        // 系列级个性化折线样式
+                                                                            width:2,
+                                                                            type: 'dotted',
+                                                                            color: "#507bee" //折线的颜色
+                                                                        }
+                                                                    }
+                                                                },
+                                                                areaStyle: {normal: {}},
+                                                                data:[120, 132, 101, 134, 90, 230, 210,80,110,150,260,240]
+                                                            }
+                                                        ]
+                                                    };
+
+                                                    // 使用刚指定的配置项和数据显示图表。
+                                                    myChart.setOption(option);
+                                                </script>
+                                        </div>
+
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-3" >
+                                    <div class="card border-light mb-3 home-body-part " id="home-limit" >
+                                        <div class="card-header">
+                                            贷款额统计
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-6 home-limit-detials">
+                                                        <div class="home-month-icon">9</div>
+                                                    </div>
+                                                    <div class="col-6 home-limit-detials">
+                                                        <p class="home-month-money">123</p>
+                                                    </div>
+                                                    <div class="col-6 home-limit-detials">
+                                                        <div class="home-month-icon">8</div>
+                                                    </div>
+                                                    <div class="col-6 home-limit-detials">
+                                                        <p class="home-month-money">123</p>
+                                                    </div>
+                                                    <div class="col-6 home-limit-detials">
+                                                        <div class="home-month-icon">7</div>
+                                                    </div>
+                                                    <div class="col-6 home-limit-detials">
+                                                        <p class="home-month-money">123</p>
+                                                    </div>
+                                                    <div class="col-6 home-limit-detials">
+                                                        <div class="home-month-icon">6</div>
+                                                    </div>
+                                                    <div class="col-6 home-limit-detials">
+                                                        <p class="home-month-money">123</p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="height: initial;">
+                                <div class="col-12">
+                                    <div class="row staff-details" id="home-body-details" style="width: 100%;">
+                                        <div class="col-1 staff-details-button">
+                                            <div class="list-group" id="staff-list-tab" role="tablist">
+                                                <a class="list-group-item list-group-item-action active" id="staff-list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">现金贷</a>
+                                                <a class="list-group-item list-group-item-action" id="staff-list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">消费贷</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-11">
+                                            <div class="card" style="margin-right: -3%; height:100%;">
+                                                <div class="card-body">
+                                                    <div class="tab-content" id="nav-tabContent">
+                                                        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="staff-list-home-list">
+                                                            <div class="row">
+                                                                <div class="col-6 staff-details-account">
+                                                                    <p class="card-title">账户现状</p>
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <div id="staff-account-one" style="height:245px;width:245px;">
+                                                                                <script type="text/javascript">
+                                                                                    var myChart = echarts.init(document.getElementById('staff-account-one'));
+                                                                                    var option = {
+                                                                                        backgroundColor: '#fff',
+                                                                                        tooltip : {
+                                                                                            trigger: 'item',
+                                                                                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                                                                        },
+                                                                                        visualMap: {
+                                                                                            show: false,
+                                                                                            min: 20,
+                                                                                            max: 400,
+                                                                                            inRange: {
+                                                                                                colorLightness: [0, 1]
+                                                                                            }
+                                                                                        },
+                                                                                        series : [
+                                                                                            {
+                                                                                                name:'访问来源',
+                                                                                                type:'pie',
+                                                                                                radius : [10,70],
+                                                                                                center: ['50%', '40%'],
+                                                                                                data:[
+                                                                                                    {value:335, name:'1'},
+                                                                                                    {value:310, name:'2'},
+                                                                                                    {value:274, name:'3'},
+                                                                                                    {value:235, name:'4'}
+                                                                                                ].sort(function (a, b) { return a.value - b.value; }),
+                                                                                                roseType: 'radius',
+                                                                                                label: {
+
+                                                                                                    normal: {
+                                                                                                        show:false
+                                                                                                    },
+                                                                                                    emphasis: {
+                                                                                                        show: true,
+                                                                                                        textStyle: {
+                                                                                                            color: '#6e6e6e'
+                                                                                                        }
+                                                                                                    }
+                                                                                                },
+                                                                                                labelLine: {
+                                                                                                    normal: {
+                                                                                                        show:false
+                                                                                                    },
+                                                                                                    emphasis:{
+                                                                                                        show:true,
+                                                                                                        lineStyle: {
+                                                                                                            color: '#6e6e6e'
+                                                                                                        },
+                                                                                                        smooth: 0.2,
+                                                                                                        length: 5,
+                                                                                                        length2: 10
+
+                                                                                                    }
+                                                                                                },
+                                                                                                itemStyle: {
+                                                                                                    normal: {
+                                                                                                        color:function(params) {
+                                                                                                            //自定义颜色
+                                                                                                            var colorList = [
+                                                                                                                '#6495ED','#87CEFA', '#87CEFA', '#87CEFA'
+                                                                                                            ];
+                                                                                                            return colorList[params.dataIndex]
+                                                                                                        },
+                                                                                                        borderWidth:1,
+                                                                                                        borderColor:'#fff'
+                                                                                                    }
+                                                                                                },
+
+                                                                                                animationType: 'scale',
+                                                                                                animationEasing: 'elasticOut',
+                                                                                                animationDelay: function (idx) {
+                                                                                                    return Math.random() * 200;
+                                                                                                }
+                                                                                            }
+                                                                                        ]
+                                                                                    };
+                                                                                    myChart.setOption(option,true);
+                                                                                </script>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6" style="font-size: small;">
+                                                                            <button class="btn btn-outline-primary" style="width:45%;"  data-toggle="modal" data-target="#cashModal"  >还款</button>
+                                                                            <button class="btn btn-outline-warning" style="width:45%;">申请延期</button>
+                                                                            <p>
+                                                                                <p>贷款使用情况：<span id="cashMoney">123</span></p>
+                                                                                <p>同比波动：<span id="cashPercent">+7%</span></p>
+                                                                                <p>账户余额：<span id="cashBalance">12000</span></p>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="modal fade" id="cashModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                            <div class="modal-dialog">
+                                                                                <div class="modal-content">
+                                                                                    <div class="modal-header">
+                                                                                        <h4 class="modal-title">还款提示</h4>
+                                                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                                    </div>
+                                                                                    <div class="modal-body">是否偿还本息合计<span class="cashModalMoney"></span>元？</div>
+                                                                                    <div class="modal-footer">
+                                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                                                                        <button type="button" class="btn btn-primary"  id="toConfirm_1">确认</button>
+                                                                                    </div>
+                                                                                </div><!-- /.modal-content -->
+                                                                            </div><!-- /.modal -->
+                                                                        </div>
+                                                                        <div class="modal fade" id="cashRepayConfir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                            <div class="modal-dialog">
+                                                                                <div class="modal-content">
+                                                                                    <div class="modal-header">
+
+                                                                                        <h4 class="modal-title">还款提示</h4>
+                                                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                                    </div>
+                                                                                    <div class="modal-body"><p>还款成功！</p>成功偿还本息<span class="cashModalMoney"></span>元，待还款额已清零。</div>
+                                                                                    <div class="modal-footer">
+                                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                                                                        <button type="button" class="btn btn-primary"  data-dismiss="modal" id="cashZeroConfir">确认</button>
+                                                                                    </div>
+                                                                                </div><!-- /.modal-content -->
+                                                                            </div><!-- /.modal -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-6 staff-details-record">
+                                                                    <p class="card-title ">业务记录</p>
+                                                                    <table class="table table-hover" rules="none;" style="font-size: small; text-align: center;">
+                                                                        <thead>
+                                                                        <tr>
+                                                                            <th>操作</th>
+                                                                            <th>额度</th>
+                                                                            <th>日期</th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <td>操作1</td>
+                                                                            <td>600</td>
+                                                                            <td>2019-6-30</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>xxx商城购入xxx</td>
+                                                                            <td>600</td>
+                                                                            <td>2019-6-30</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>xxx商城购入xxx</td>
+                                                                            <td>666</td>
+                                                                            <td>2019-6-30</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>xxx商城购入xxx</td>
+                                                                            <td>666</td>
+                                                                            <td>2019-6-30</td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="staff-list-profile-list">
+                                                            <div class="row">
+                                                                <div class="col-4 staff-details-account">
+                                                                    <p class="card-title">账户现状</p>
+                                                                    <div class="row staff-details-account-consume">
+                                                                        <div class="col-7" style="text-align: center;">
+                                                                            <div id="staff-account-two" style="width: 109px; height:109px;">
+                                                                                <script type="text/javascript">
+                                                                                    var myCharts = echarts.init(document.getElementById('staff-account-two'));
+                                                                                    var options = {
+                                                                                        backgroundColor: '#fff',
+                                                                                        tooltip : {
+                                                                                            trigger: 'item',
+                                                                                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                                                                        },
+                                                                                        visualMap: {
+                                                                                            show: false,
+                                                                                            min: 20,
+                                                                                            max: 400,
+                                                                                            inRange: {
+                                                                                                colorLightness: [0, 1]
+                                                                                            }
+                                                                                        },
+                                                                                        series : [
+                                                                                            {
+                                                                                                name:'访问来源',
+                                                                                                type:'pie',
+                                                                                                radius : [5,50],
+                                                                                                center: [ '50%','50%'],
+                                                                                                data:[
+                                                                                                    {value:335, name:'1'},
+                                                                                                    {value:310, name:'2'},
+                                                                                                    {value:274, name:'3'},
+                                                                                                    {value:235, name:'4'}
+                                                                                                ].sort(function (a, b) { return a.value - b.value; }),
+                                                                                                roseType: 'radius',
+                                                                                                label: {
+
+                                                                                                    normal: {
+                                                                                                        show:false
+                                                                                                    },
+                                                                                                    emphasis: {
+                                                                                                        show: false,
+                                                                                                        textStyle: {
+                                                                                                            color: '#6e6e6e'
+                                                                                                        }
+                                                                                                    }
+                                                                                                },
+                                                                                                labelLine: {
+                                                                                                    normal: {
+                                                                                                        show:false
+                                                                                                    },
+                                                                                                    emphasis:{
+                                                                                                        show:false,
+                                                                                                        lineStyle: {
+                                                                                                            color: '#6e6e6e'
+                                                                                                        },
+                                                                                                        smooth: 0.2,
+                                                                                                        length: 5,
+                                                                                                        length2: 10
+
+                                                                                                    }
+                                                                                                },
+                                                                                                itemStyle: {
+                                                                                                    normal: {
+                                                                                                        color:function(params) {
+                                                                                                            //自定义颜色
+                                                                                                            var colorList = [
+                                                                                                                '#6495ED','#87CEFA', '#87CEFA', '#87CEFA'
+                                                                                                            ];
+                                                                                                            return colorList[params.dataIndex]
+                                                                                                        },
+                                                                                                        borderWidth:1,
+                                                                                                        borderColor:'#fff'
+                                                                                                    }
+                                                                                                },
+
+                                                                                                animationType: 'scale',
+                                                                                                animationEasing: 'elasticOut',
+                                                                                                animationDelay: function (idx) {
+                                                                                                    return Math.random() * 200;
+                                                                                                }
+                                                                                            }
+                                                                                        ]
+                                                                                    };
+                                                                                    myCharts.setOption(options,true);
+                                                                                </script>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-5" >
+                                                                            <button class="btn btn-outline-primary" style="width:80%;"  data-toggle="modal" data-target="#consumeModal" >还款</button>
+                                                                            <button class="btn btn-outline-warning" style="width:80%;">申请延期</button>
+
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <div>贷款使用情况：<span id="consumeMoney">123456</span></div>
+                                                                            <div>同比波动：<span id="consumePercent">+7%</span></div>
+                                                                            <div>账户余额：<span id="consumeBalance">12000</span></div>
+                                                                        </div>
+                                                                        <div class="modal fade" id="consumeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                            <div class="modal-dialog">
+                                                                                <div class="modal-content">
+                                                                                    <div class="modal-header">
+
+                                                                                        <h4 class="modal-title" id="myModalLabel">还款提示</h4>
+                                                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                                    </div>
+                                                                                    <div class="modal-body">是否偿还本息合计<span class="consumeModalMoney"></span>元？</div>
+                                                                                    <div class="modal-footer">
+                                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                                                                        <button type="button" class="btn btn-primary"  id="toConfirm_2">确认</button>
+                                                                                    </div>
+                                                                                </div><!-- /.modal-content -->
+                                                                            </div><!-- /.modal -->
+                                                                        </div>
+                                                                        <div class="modal fade" id="consumeRepayConfir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                            <div class="modal-dialog">
+                                                                                <div class="modal-content">
+                                                                                    <div class="modal-header">
+
+                                                                                        <h4 class="modal-title">还款提示</h4>
+                                                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                                    </div>
+                                                                                    <div class="modal-body"><p>还款成功！</p>成功偿还本息<span class="consumeModalMoney"></span>元，待还款额已清零。</div>
+                                                                                    <div class="modal-footer">
+                                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                                                                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="repayZeroConfir">确认</button>
+                                                                                    </div>
+                                                                                </div><!-- /.modal-content -->
+                                                                            </div><!-- /.modal -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4 staff-details-record staff-details-account">
+                                                                    <p class="card-title">商城贷产品</p>
+                                                                    <table class="table table-hover" rules="none;" style="font-size: small; text-align: center;">
+
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <td>操作1</td>
+                                                                            <td>600</td>
+                                                                            <td>2019-6-30</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>xxx商城购入xxx</td>
+                                                                            <td>600</td>
+                                                                            <td>2019-6-30</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>xxx商城购入xxx</td>
+                                                                            <td>666</td>
+                                                                            <td>2019-6-30</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>xxx商城购入xxx</td>
+                                                                            <td>666</td>
+                                                                            <td>2019-6-30</td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+
+                                                                </div>
+                                                                <div class="col-4 staff-details-record">
+                                                                    <p class="card-title ">业务记录</p>
+                                                                    <table class="table table-hover" rules="none;" style="font-size: small; text-align: center;">
+                                                                        <thead>
+                                                                        <tr>
+                                                                            <th>操作</th>
+                                                                            <th>额度</th>
+                                                                            <th>日期</th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <td>操作1</td>
+                                                                            <td>600</td>
+                                                                            <td>2019-6-30</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>xxx商城购入xxx</td>
+                                                                            <td>600</td>
+                                                                            <td>2019-6-30</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>xxx商城购入xxx</td>
+                                                                            <td>666</td>
+                                                                            <td>2019-6-30</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>xxx商城购入xxx</td>
+                                                                            <td>666</td>
+                                                                            <td>2019-6-30</td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--个人中心-->
+                        <div class="tab-pane fade" id="pills-user" role="tabpanel" aria-labelledby="pills-user-tab">
+                            <div class="card border-light mb-3 home-body-part user-block-container">
+                                <div class="row container user-details">
+                                    <div class="col-2" id="user-image">
+                                        <img src="images/user-img.jpg" width="128" height="128">
+                                    </div>
+
+                                    <div class="col-4 user-title">
+                                        <p id="username">崇林</p>
+                                        <div class="user-info">
+                                            <span class="user-info">公司名称：</span>
+                                            <span id="companyName" class="user-info">荣欣</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-2 offset-md-4" align="center" >
+                                        <img src="images/user-message.png" width="64" height="64">
+                                    </div>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <div class="row ">
+                                        <div class="col-4">
+                                            <a>积分：</a>
+                                            <a>12000</a>
+                                        </div>
+                                        <div class="col-4">
+                                            <a>贷款上限：</a>
+                                            <a>128000.0</a>
+                                        </div>
+                                        <div class="col-4">
+                                            <a>公司规模：</a>
+                                            <a>小</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="card border-light mb-3 home-body-part user-block-container">
+                                <div class="card-body">
+                                    <div class="user-company">
+                                        <div class="row justify-content-md-center">
+                                            <div class="col-5 user-info">
+                                                <span>企业名称：</span>
+                                                <span id="enterprisename">荣欣</span>
+                                            </div>
+                                            <div class="col-5 user-info">
+                                                <span>对公账号开户行：</span>
+                                                <span id="depositbank">花旗银行</span>
+                                            </div>
+                                            <div class="col-5 user-info">
+                                                <span>营业执照注册号：</span>
+                                                <span id="businesslicence">423689653578954</span>
+                                            </div>
+                                            <div class="col-5 user-info">
+                                                <span>注册人姓名：</span>
+                                                <span id="accountname">崇林</span>
+                                            </div>
+                                            <div class="col-5 user-info">
+                                                <span>银行开户名：</span>
+                                                <span id="accountowner">荣欣</span>
+                                            </div>
+                                            <div class="col-5 user-info">
+                                                <span>注册人证件号：</span>
+                                                <span id="owneridentification">430482196809020012</span>
+                                            </div>
+                                            <div class="col-5 user-info">
+                                                <span>公司对公账号：</span>
+                                                <span id="publicaccounts">34709237595837201</span>
+                                            </div>
+                                            <div class="col-5 user-info">
+                                                <span>注册人联系方式：</span>
+                                                <span id="ownernumber">15118721045</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!--员工报销-->
+                        <div class="tab-pane fade" id="pills-shop" role="tabpanel" aria-labelledby="pills-shop-tab">
+
+                            <div class="card border-light mb-3 home-body-part">
+                                <div class="shop-block-container">
+
+                                    <!--搜索框-->
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" id="shop-search-input" aria-label="shop-search-input" aria-describedby="shop-search-input">
+                                        <div class="input-group-append">
+                                            <button class="input-group-text" id="shop-search-btn">搜索</button>
+                                        </div>
+                                    </div>
+
+                                    <!--搜索限定-->
+                                    <div class="col-8 offset-md-1 shop-search-attr">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="shopAttrs" id="shopAttr1" value="1">
+                                            <label class="form-check-label" for="shopAttr1">金融服务</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="shopAttrs" id="shopAttr2" value="2">
+                                            <label class="form-check-label" for="shopAttr2">休闲娱乐</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="shopAttrs" id="shopAttr3" value="3">
+                                            <label class="form-check-label" for="shopAttr3">服饰商品</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="shopAttrs" id="shopAttr4" value="4">
+                                            <label class="form-check-label" for="shopAttr4">住宿服务</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="shopAttrs" id="shopAttr5" value="5">
+                                            <label class="form-check-label" for="shopAttr5">出行服务</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--产品特写-->
+                            <div class="container" id="shop-product-feature">
+                                <div id="carouselShopBarIndicators" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carouselShopBarIndicators" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carouselShopBarIndicators" data-slide-to="1"></li>
+                                        <li data-target="#carouselShopBarIndicators" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img class="shop-bar-img" src="images/shopBar.png" alt="产品1">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5>产品名1</h5>
+                                                <p class="shop-block-text">产品1介绍XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="shop-bar-img" src="images/shopBar.png" alt="产品2">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5>产品名2</h5>
+                                                <p class="shop-block-text">产品2介绍XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="shop-bar-img" src="images/shopBar.png" alt="产品3">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5>产品名3</h5>
+                                                <p class="shop-block-text">产品3介绍XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--产品汇总-->
+                            <div id="carouselShopIndicators" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselShopIndicators" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselShopIndicators" data-slide-to="1"></li>
+
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="shop-block-container">
+                                            <div class="row justify-content-between">
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/1.jpeg" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>希尔顿酒店</p>
+                                                            <p class="service-block-text">中高端连锁酒店</p>
+                                                            <p>￥  1200</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/10.png" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>双立人1731多用刀</p>
+                                                            <p class="service-block-text">双立人多用刀</p>
+                                                            <p>￥  1388</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/11.jpeg" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>爱达或爱欲</p>
+                                                            <p class="service-block-text">纳博科夫小说</p>
+                                                            <p>￥  58</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="row justify-content-between">
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/12.jpeg" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>Kindle</p>
+                                                            <p class="service-block-text">亚马逊出品电子书</p>
+                                                            <p>￥  499</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/13.png" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>美赞臣蓝臻</p>
+                                                            <p class="service-block-text">美赞臣婴幼儿奶粉</p>
+                                                            <p>￥  816</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/14.png" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>乐高航天飞机积木</p>
+                                                            <p class="service-block-text">乐高太空卫星任务玩具</p>
+                                                            <p>￥  299</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="row justify-content-between">
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/15.jpeg" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>MacBook</p>
+                                                            <p class="service-block-text">办公利器</p>
+                                                            <p>￥  18000</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/16.jpg" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>巴黎假日七日游</p>
+                                                            <p class="service-block-text">一周时间,畅游巴黎,感受青春</p>
+                                                            <p>￥  9000</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/2.jpeg" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>迈巴赫s450</p>
+                                                            <p class="service-block-text">奔驰旗下中高端车型</p>
+                                                            <p>￥  1390000</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="service-block-container">
+                                            <div class="row justify-content-between">
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/3.jpeg" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>LeoFlower连衣裙</p>
+                                                            <p class="service-block-text">阿玛尼服装</p>
+                                                            <p>￥  8000</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/4.jpg" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>Crossbody Bag</p>
+                                                            <p class="service-block-text">阿玛尼皮包</p>
+                                                            <p>￥ 16000</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/5.jpeg" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>HD 820森海塞尔耳机</p>
+                                                            <p class="service-block-text">森海塞尔高端耳机 </p>
+                                                            <p>￥ 	16499</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="row justify-content-between">
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/6.jpeg" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>小米运动手环</p>
+                                                            <p class="service-block-text">小米出品运动手环</p>
+                                                            <p>￥ 	 99</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/7.jpeg" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>迪奥永恒的爱</p>
+                                                            <p class="service-block-text">迪奥经典香水</p>
+                                                            <p>￥  810</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/8.jpg" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>香奈儿LE LIFT</p>
+                                                            <p class="service-block-text">香奈儿紧肤乳霜</p>
+                                                            <p>￥  1350</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="row justify-content-between">
+                                                <a href="#" class="col-4 service-block" data-toggle="modal" data-target="#loanPatternModal">
+                                                    <div class="row" >
+                                                        <div class="col-4">
+                                                            <img class="service-block-img" src="http://duanbanyu.picp.net:25345/images/mallstation/9.png" />
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>双立人煎炒锅24cm</p>
+                                                            <p class="service-block-text">双立人平底煎锅</p>
+                                                            <p>￥  1880</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <!--消费贷模态框-->
+
+                            <div class="modal fade" id="loanPatternModal" tabindex="-1" role="dialog" aria-labelledby="loanPatternModal" aria-hidden="true">
+                                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">消费贷</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="shop-loan-patterns">
+                                                <div class="row shop-loan-pattern-row">
+                                                    <div class="col-6">
+                                                        <div class="row shop-loan-pattern shop-loan-pattern-checked" data-value="3">
+                                                            <div class="col-3 shop-loan-attr">
+                                                                <span>3期</span>
+                                                            </div>
+                                                            <div class="col-8 shop-loan-pattern-details">
+                                                                <span>每期应还¥14982.28</span><br/>
+                                                                <!--<small class="shop-loan-pattern-text">含每期手续费¥95.00</small>-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="row shop-loan-pattern" data-value="12">
+                                                            <div class="col-3 shop-loan-attr">
+                                                                <span>12期</span>
+                                                            </div>
+                                                            <div class="col-8 shop-loan-pattern-details">
+                                                                <span>每期应还¥1720.92</span><br/>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row shop-loan-pattern-row">
+                                                    <div class="col-6">
+                                                        <div class="row shop-loan-pattern" data-value="6">
+                                                            <div class="col-3 shop-loan-attr">
+                                                                <span>6期</span>
+                                                            </div>
+                                                            <div class="col-8 shop-loan-pattern-details">
+                                                                <span>每期应还¥5036.18</span><br/>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="row shop-loan-pattern" data-value="18">
+                                                            <div class="col-3 shop-loan-attr">
+                                                                <span>18期</span>
+                                                            </div>
+                                                            <div class="col-8 shop-loan-pattern-details">
+                                                                <span>每期应还¥1307.33</span><br/>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row shop-loan-pattern-row">
+                                                    <div class="col-6">
+                                                        <div class="row shop-loan-pattern" data-value="10">
+                                                            <div class="col-3 shop-loan-attr">
+                                                                <span>9期</span>
+                                                            </div>
+                                                            <div class="col-8 shop-loan-pattern-details">
+                                                                <span>每期应还¥2549.66</span><br/>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="row shop-loan-pattern" data-value="24">
+                                                            <div class="col-3 shop-loan-attr">
+                                                                <span>24期</span>
+                                                            </div>
+                                                            <div class="col-8 shop-loan-pattern-details">
+                                                                <span>每期应还¥684.86</span><br/>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">返回</button>
+                                            <button type="button" class="btn btn-primary" id="shopLoanPatternBtn" data-dismiss="modal">完成</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--付款方式模态框-->
+                            <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModal" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">选择付款方式</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="paymentTerms" id="paymentTerm1" value="consumption" checked>
+                                                <label class="form-check-label" for="paymentTerm1">
+                                                    消费贷
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="paymentTerms" id="paymentTerm2" value="cash">
+                                                <label class="form-check-label" for="paymentTerm2">
+                                                    现金贷
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="paymentTerms" id="paymentTerm3" value="card">
+                                                <label class="form-check-label" for="paymentTerm3">
+                                                    银行卡支付
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">返回</button>
+                                            <button type="button" class="btn btn-primary" id="paymentModalBtn" data-dismiss="modal">完成</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--银行卡模态框-->
+                            <div class="modal fade" id="cardModal" tabindex="-1" role="dialog" aria-labelledby="cardModal" aria-hidden="true">
+                                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">选择银行卡</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="cardOptions" id="cardOption1" value="card1" checked>
+                                                <label class="form-check-label" for="cardOption1">
+                                                    <span class="card-option-name">********9270(借记卡)</span>
+                                                    <!--<span class="card-option-remain">余额：XXXX元</span>-->
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="cardOptions" id="cardOption2" value="card2">
+                                                <label class="form-check-label" for="cardOption2">
+                                                    <span class="card-option-name">********9271(借记卡)</span>
+                                                    <!--<span class="card-option-remain">余额：XXXX元</span>-->
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">返回</button>
+                                            <button type="button" class="btn btn-primary" id="cardModalBtn" data-dismiss="modal">完成</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--支付成功模态框-->
+                            <div class="modal fade" id="passModal" tabindex="-1" role="dialog" aria-labelledby="passModal" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <h5>支付成功</h5>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" id="passModalBtn" data-dismiss="modal">确定</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!--<script src="js/index.js"></script>-->
+    <script src="js/staff.js"></script>
+</body>
+</html>

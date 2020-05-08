@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyCircle">
+        <attr name="BackgroundColor" format="color"/>
+        <attr name="ShadowColor" format="color"/>
+        <attr name="percent" format="float"/>
+    </declare-styleable>
+    <declare-styleable name="BaseHead">
+        <attr name="title" format="string"/>
+    </declare-styleable>
+</resources>

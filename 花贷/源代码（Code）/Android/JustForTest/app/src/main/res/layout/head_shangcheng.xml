@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/head"
+    android:layout_width="1078px"
+    android:layout_height="840px"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="5dp"
+    app:contentPadding="1dp">
+
+    <com.youth.banner.Banner
+        android:id="@+id/head_banner"
+        android:layout_width="match_parent"
+        android:layout_height="720px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+    </com.youth.banner.Banner>
+
+    <ImageView
+        android:layout_marginLeft="54px"
+        android:layout_marginTop="23px"
+        android:src="@drawable/icon"
+        android:layout_width="55px"
+        android:layout_height="55px" />
+    <ImageView
+        android:layout_marginLeft="979px"
+        android:layout_marginTop="23px"
+        android:src="@drawable/sousuo2"
+        android:layout_width="55px"
+        android:layout_height="55px" />
+    <android.support.v7.widget.RecyclerView
+        android:background="#ffffff"
+        android:id="@+id/head_recycle"
+        android:layout_marginTop="720px"
+        android:layout_width="match_parent"
+        android:layout_height="120px"
+        android:orientation="vertical">
+
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>

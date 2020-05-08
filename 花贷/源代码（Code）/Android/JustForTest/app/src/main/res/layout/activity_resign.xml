@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.yhy.justfortest.Activities.ResignActivity">
+<LinearLayout
+    android:layout_marginTop="93px"
+    android:layout_width="match_parent"
+    android:layout_height="75px"
+    android:orientation="horizontal">
+    <ImageView
+        android:id="@+id/bt_resign_back"
+        android:layout_width="73px"
+        android:layout_height="73px"
+        android:layout_marginLeft="116px"
+        android:src="@drawable/fanhui"
+        />
+    <TextView
+        android:layout_width="150px"
+        android:layout_height="73px"
+        android:text="注册"
+        android:layout_marginLeft="50px"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="20sp"/>
+</LinearLayout>
+    <RelativeLayout
+        android:layout_marginTop="65px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="943px"
+            android:layout_height="247px"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/shape_back" />
+        <ImageView
+            android:layout_marginTop="1130px"
+            android:layout_width="943px"
+            android:layout_height="247px"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/shape_back" />
+
+        <LinearLayout
+
+            android:layout_width="832px"
+            android:layout_height="1300px"
+            android:layout_marginLeft="123px"
+            android:layout_marginTop="50px"
+            android:background="@drawable/shape_layout"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="680px"
+                android:layout_height="96px"
+                android:layout_marginLeft="79px"
+                android:layout_marginTop="50px"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="175px"
+                    android:layout_height="96px"
+                    android:background="@drawable/shape_radius"
+                    android:gravity="center"
+                    android:text="身份证号" />
+                <LinearLayout
+                    android:layout_width="450px"
+                    android:layout_height="96px"
+                    android:layout_marginLeft="50px"
+                    android:background="@drawable/shape_radius">
+                    <EditText
+                        android:id="@+id/resign_id"
+                        android:layout_width="430px"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10px"
+                        android:background="@null" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="680px"
+                android:layout_height="96px"
+                android:layout_marginLeft="79px"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="175px"
+                    android:layout_height="96px"
+                    android:background="@drawable/shape_radius"
+                    android:gravity="center"
+                    android:text="用户名" />
+                <LinearLayout
+                    android:layout_width="450px"
+                    android:layout_height="96px"
+                    android:layout_marginLeft="50px"
+                    android:background="@drawable/shape_radius">
+                    <EditText
+                        android:id="@+id/resign_user_name"
+                        android:layout_width="430px"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10px"
+                        android:background="@null" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="680px"
+                android:layout_height="96px"
+                android:layout_marginLeft="79px"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="175px"
+                    android:layout_height="96px"
+                    android:background="@drawable/shape_radius"
+                    android:gravity="center"
+                    android:text="密码" />
+                <LinearLayout
+                    android:layout_width="450px"
+                    android:layout_height="96px"
+                    android:layout_marginLeft="50px"
+                    android:background="@drawable/shape_radius">
+                    <EditText
+                        android:id="@+id/resign_password"
+                        android:layout_width="430px"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10px"
+                        android:background="@null" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="680px"
+                android:layout_height="96px"
+                android:layout_marginLeft="79px"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="175px"
+                    android:layout_height="96px"
+                    android:background="@drawable/shape_radius"
+                    android:gravity="center"
+                    android:text="手机号" />
+                <LinearLayout
+                    android:layout_width="450px"
+                    android:layout_height="96px"
+                    android:layout_marginLeft="50px"
+                    android:background="@drawable/shape_radius">
+                    <EditText
+                        android:id="@+id/resign_tel_num"
+                        android:layout_width="430px"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10px"
+                        android:background="@null" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="680px"
+                android:layout_height="96px"
+                android:layout_marginLeft="79px"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="175px"
+                    android:layout_height="96px"
+                    android:background="@drawable/shape_radius"
+                    android:gravity="center"
+                    android:text="企业名称" />
+                <LinearLayout
+                    android:layout_width="450px"
+                    android:layout_height="96px"
+                    android:layout_marginLeft="50px"
+                    android:background="@drawable/shape_radius">
+                    <EditText
+                        android:id="@+id/resign_enterprisename"
+                        android:layout_width="430px"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10px"
+                        android:background="@null" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="680px"
+                android:layout_height="96px"
+                android:layout_marginLeft="79px"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="175px"
+                    android:layout_height="96px"
+                    android:background="@drawable/shape_radius"
+                    android:gravity="center"
+                    android:text="银行卡号" />
+                <LinearLayout
+                    android:layout_width="450px"
+                    android:layout_height="96px"
+                    android:layout_marginLeft="50px"
+                    android:background="@drawable/shape_radius">
+                    <EditText
+                        android:id="@+id/resign_bank_account"
+                        android:layout_width="430px"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10px"
+                        android:background="@null" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="680px"
+                android:layout_height="96px"
+                android:layout_marginLeft="79px"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="175px"
+                    android:layout_height="96px"
+                    android:background="@drawable/shape_radius"
+                    android:gravity="center"
+                    android:text="银行密码" />
+                <LinearLayout
+                    android:layout_width="450px"
+                    android:layout_height="96px"
+                    android:layout_marginLeft="50px"
+                    android:background="@drawable/shape_radius">
+                    <EditText
+                        android:id="@+id/resign_bank_password"
+                        android:layout_width="430px"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10px"
+                        android:background="@null" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="680px"
+                android:layout_marginTop="40px"
+                android:layout_height="96px"
+                android:layout_marginLeft="76px"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="397px"
+                    android:layout_height="96px"
+                    android:background="@drawable/shape_radius"
+                    >
+                    <EditText
+                        android:id="@+id/resign_check"
+                        android:layout_width="397px"
+                        android:layout_height="96px"
+                        android:hint="验证码"
+                        android:inputType="text"
+                        android:layout_marginLeft="15px"
+                        android:background="@null"/>
+                </LinearLayout>
+                <Button
+                    android:id="@+id/bt_send_check"
+                    android:gravity="center"
+                    android:background="@drawable/shape_button"
+                    android:layout_marginLeft="43px"
+                    android:layout_width="220px"
+                    android:text="获取验证码"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/resign_bt"
+                android:layout_width="match_parent"
+                android:layout_height="120px"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="80px"
+                android:background="@drawable/shape_button"
+                android:text="注册"
+                android:textColor="#ffffff"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="1400px"
+            android:layout_width="match_parent"
+            android:layout_height="60px"
+            android:text="花旗project"
+            android:gravity="center"/>
+    </RelativeLayout>
+
+</LinearLayout>

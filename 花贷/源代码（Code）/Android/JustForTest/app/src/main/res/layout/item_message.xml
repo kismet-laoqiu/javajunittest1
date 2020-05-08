@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="939px"
+    android:layout_height="236px"
+    android:background="@drawable/shape_button2">
+    <TextView
+        android:textColor="#707070"
+        android:id="@+id/message_text"
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|start"
+        android:text="消息"/>
+    <TextView
+        android:textColor="#707070"
+        android:id="@+id/message_time"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|end"
+        android:text="时间"/>
+</RelativeLayout>

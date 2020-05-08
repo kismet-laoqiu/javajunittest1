@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:background="#8c97cb"
+    tools:context=".Framents.firstPageFragment">
+    <ImageView
+        android:layout_marginTop="9dp"
+        android:src="@drawable/icon2"
+        android:layout_marginLeft="27dp"
+        android:layout_width="28dp"
+        android:layout_height="28dp" />
+    <ImageView
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="31dp"
+        android:layout_marginTop="9dp"
+        android:layout_width="28dp"
+        android:src="@drawable/sousuo"
+        android:layout_height="28dp" />
+    <TextView
+        android:layout_marginTop="120px"
+        android:layout_marginLeft="70px"
+        android:layout_width="380px"
+        android:layout_height="100px"
+        android:text="服务中心"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="28sp"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_marginTop="240px"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+</RelativeLayout>

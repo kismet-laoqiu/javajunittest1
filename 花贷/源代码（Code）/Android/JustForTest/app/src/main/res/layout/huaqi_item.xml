@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="300dp"
+    android:layout_height="150dp"
+    android:background="@drawable/item"
+    android:id="@+id/xxx"
+    >
+    <TextView
+        android:id="@+id/huaqi_item_pri"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="100dp"
+        android:layout_width="100dp"
+        android:layout_height="30dp" />
+    <TextView
+        android:id="@+id/huaqi_item_pri_rest"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="80dp"
+        android:layout_width="100dp"
+        android:layout_height="30dp" />
+    <TextView
+        android:id="@+id/huaqi_num"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:text="1期"
+        android:textSize="10sp"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+</RelativeLayout>

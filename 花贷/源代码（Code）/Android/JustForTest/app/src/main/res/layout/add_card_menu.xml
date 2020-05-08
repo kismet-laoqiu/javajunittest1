@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+
+    android:layout_height="200dp">
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:background="@drawable/add_cardview"
+        >
+        <EditText
+            android:id="@+id/add_card_account"
+            android:hint="账号"
+            android:layout_marginLeft="130px"
+            android:layout_marginTop="101px"
+            android:background="@null"
+            android:layout_width="220dp"
+            android:layout_height="30dp" />
+        <EditText
+            android:id="@+id/add_card_password"
+            android:hint="密码"
+            android:layout_marginLeft="130px"
+            android:layout_marginTop="251px"
+            android:background="@null"
+            android:layout_width="220dp"
+            android:layout_height="30dp" />
+        <Button
+            android:alpha="0"
+            android:id="@+id/add_card_add"
+            android:layout_marginTop="480px"
+            android:layout_width="300dp"
+            android:layout_height="50dp" />
+    </RelativeLayout>
+
+</RelativeLayout>
